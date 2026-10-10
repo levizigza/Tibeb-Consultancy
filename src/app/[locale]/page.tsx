@@ -8,7 +8,7 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { ProcessSection } from "@/components/sections/process-section";
 import { QuietEditorialSection } from "@/components/sections/quiet-editorial-section";
 import { ServiceGridSection } from "@/components/sections/service-grid-section";
-import { SplitSection } from "@/components/sections/split-section";
+import { MaterialBand } from "@/components/sections/material-band";
 import { InlineLink } from "@/components/ui/link";
 import { businessProfile } from "@/content/business/profile";
 import {
@@ -68,6 +68,8 @@ async function HomeContent({ params }: { params: Promise<{ locale: string }> }) 
           },
         ]}
       />
+
+      <MaterialBand id="photograph" title={homePage.photoTitle} intro={homePage.photoBody} />
 
       <QuietEditorialSection id="trust" title={homePage.trustTitle}>
         <p>{homePage.trustIntro}</p>
@@ -137,10 +139,6 @@ async function HomeContent({ params }: { params: Promise<{ locale: string }> }) 
         <p className="text-meta text-muted">{homePage.aboutDraftNote}</p>
         <p>{homePage.aboutFounder}</p>
       </QuietEditorialSection>
-
-      <SplitSection id="photograph" title={homePage.photoTitle}>
-        <p>{homePage.photoBody}</p>
-      </SplitSection>
 
       <QuietEditorialSection id="evidence" title={homePage.evidenceTitle}>
         {testimonials.length === 0 ? <p>{homePage.evidenceEmpty}</p> : null}

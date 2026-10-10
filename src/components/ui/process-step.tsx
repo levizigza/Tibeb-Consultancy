@@ -14,7 +14,7 @@ export function ProcessStep({ step, title, children }: ProcessStepProps) {
   return (
     <li className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-4 gap-y-1">
       <span
-        className="flex size-10 items-center justify-center rounded-full border border-line bg-surface text-meta font-semibold text-foreground"
+        className="flex size-10 items-center justify-center rounded-full border-2 border-curtain bg-surface text-meta font-semibold text-foreground shadow-[inset_0_-3px_0_var(--ornament)]"
         data-motion="rise"
       >
         {step}

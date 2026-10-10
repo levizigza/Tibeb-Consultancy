@@ -32,7 +32,12 @@ export function ServiceGridSection({
         </div>
         <ul className="mt-xl grid grid-cols-1 gap-lg md:grid-cols-2">
           {items.map((item) => (
-            <li key={item.href} className="rounded-lg border border-line bg-surface p-lg shadow-rest" data-motion="rise">
+            <li key={item.href} className="overflow-hidden rounded-lg border border-line bg-surface shadow-rest" data-motion="rise">
+              <div aria-hidden="true" className="flex flex-col">
+                <span className="h-2 bg-curtain" />
+                <span className="h-1 bg-ornament" />
+              </div>
+              <div className="p-lg">
               <h3 className="text-heading-sm font-semibold">
                 <Link href={item.href} className="underline decoration-link/40 underline-offset-4">
                   {item.title}
@@ -41,6 +46,7 @@ export function ServiceGridSection({
               <p className="mt-3 text-body text-muted">{item.detail}</p>
               <p className="mt-4 text-meta font-medium">{item.status}</p>
               {item.children}
+              </div>
             </li>
           ))}
         </ul>

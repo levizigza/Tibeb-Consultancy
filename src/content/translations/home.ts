@@ -33,8 +33,9 @@ export const homePage = {
   aboutDraftNote: "This sentence is a development draft. It is not an approved public claim.",
   aboutFounder:
     "No founder name, photograph, or history is approved. This page does not add a founder story.",
-  photoTitle: "Photograph",
-  photoBody: "A photograph appears in this space only after the owner supplies one.",
+  photoTitle: "Materials",
+  photoBody:
+    "These stills are decorative. They are not the business, a founder, or a client. A photograph of the business appears only after the owner supplies one.",
   supportListLead:
     "These consultation languages are approved for publication. Website language names stay separate from this list.",
   evidenceTitle: "Client evidence",

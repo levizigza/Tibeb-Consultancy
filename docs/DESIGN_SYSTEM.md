@@ -87,7 +87,9 @@ Motion is 150ms and 250ms, with the standard ease. `prefers-reduced-motion: redu
 
 The first visit in a session opens on a seal-brown curtain. The wordmark settles, the gold line draws, and the curtain rises. Skip and Escape close it. A return visit in the same session, and anyone who asks for reduced motion, sees the page directly.
 
-After that, motion and stillness alternate. The homepage title, the hairline under it, service cards, process numbers, the photograph frame, and the closing button rise or draw when they enter the screen. Headings, body copy, the header, the footer, and the question list stay still. Reduced motion leaves every one of those still.
+After that, motion and stillness alternate. The homepage title, the gold rule under it, service cards, process numbers, and the closing button rise or draw when they enter the screen. Decorative stills drift slowly inside a seal-brown frame. Headings, body copy, the header, the footer, and the question list stay still. Reduced motion leaves every one of those still.
+
+Gold sits on seal brown, as a band under the header, a band over the footer, a cap on each service card, a foot on the primary control, and a line around each still. On parchment alone it is too faint to see. The stills are Unsplash photographs of gold leaf, paper, and wood. Each caption says they are decorative and not a picture of the business.
 
 ## Components
 

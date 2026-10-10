@@ -2,9 +2,9 @@
 
 The shell uses the Clear ground tokens in `docs/DESIGN_SYSTEM.md` and the routes in `docs/INFORMATION_ARCHITECTURE.md`. Sections alternate in density. The same card grid is not repeated down a page.
 
-No photograph, founder, or client quotation is invented. A split section without a supplied image shows the sentence "No photograph has been supplied."
+No founder portrait or client quotation is invented. Decorative stills are licensed material photographs, and the page says they are not the business. A split section without a supplied image shows the sentence "No photograph has been supplied."
 
-Motion is mixed with stillness. The title, the hairline, cards, step numbers, the photograph frame, and the closing button move once as they enter. Reading sections, the header, and the footer do not. `prefers-reduced-motion: reduce` keeps the whole page still.
+Motion is mixed with stillness. The title, the gold rule, cards, step numbers, and the closing button move once as they enter. The decorative stills drift slowly. Reading sections, the header, and the footer stay still. `prefers-reduced-motion: reduce` keeps the whole page still.
 
 ## Breakpoints
 

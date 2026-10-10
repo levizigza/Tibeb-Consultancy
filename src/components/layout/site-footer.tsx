@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SealRule } from "@/components/brand/seal-rule";
 import { BrandLockup } from "@/components/layout/brand-lockup";
 import { ContactCta } from "@/components/layout/contact-cta";
 import { primaryNavigation, serviceFamilies } from "@/content/site/information-architecture";
@@ -11,7 +12,8 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
   const chrome = resolveChrome(locale).messages;
 
   return (
-    <footer className="edge-rule-top border-t border-line bg-surface">
+    <footer className="bg-surface">
+      <SealRule position="top" />
       <div className="mx-auto grid w-full max-w-page gap-3xl px-gutter py-3xl sm:px-gutter-lg md:grid-cols-[repeat(2,minmax(0,1fr))] lg:grid-cols-[repeat(4,minmax(0,1fr))]">
         <BrandLockup locale={locale} />
         <nav aria-label={chrome.footerNav}>

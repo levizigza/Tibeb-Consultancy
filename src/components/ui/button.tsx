@@ -2,12 +2,13 @@ import Link from "next/link";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: "primary" | "secondary" | "quiet";
+  variant?: "primary" | "secondary" | "quiet" | "seal";
   size?: "sm" | "md";
 };
 
 const variants = {
-  primary: "border-b-2 border-ornament bg-accent text-accent-foreground shadow-rest hover:shadow-raised",
+  primary: "border-b-4 border-ornament bg-accent text-accent-foreground shadow-rest hover:shadow-raised",
+  seal: "border-b-4 border-ornament bg-curtain-ink text-curtain shadow-rest hover:shadow-raised",
   secondary: "border border-line bg-background text-foreground hover:bg-surface",
   quiet: "bg-transparent text-link underline decoration-link/40 underline-offset-4 hover:decoration-link",
 } as const;
@@ -53,7 +54,7 @@ export function ButtonLink({
   children,
 }: {
   href: string;
-  variant?: "primary" | "secondary" | "quiet";
+  variant?: "primary" | "secondary" | "quiet" | "seal";
   size?: "sm" | "md";
   className?: string;
   children: ReactNode;

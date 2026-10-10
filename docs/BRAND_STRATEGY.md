@@ -146,7 +146,9 @@ Why this and not a warmer, more decorated system: the business cannot yet show a
 
 The recommended tokens, for the implementation that follows approval:
 
-The owner asked on 10 October 2026 for gold and brown together, refined enough to read as an official consultancy. The structure of Direction A stays: no pattern, no crest, no founder block, and no gold text on the light page. Teal is retired. Brown does the work of text and controls. Gold is the hairline.
+The owner asked on 10 October 2026 for gold and brown together, refined enough to read as an official consultancy. The structure of Direction A stays: no pattern, no crest, no founder block, and no gold text on the light page. Teal is retired. Brown does the work of text and controls. Gold is the hairline, and it is drawn on seal brown so it can be seen.
+
+The owner asked the same day for royalty-free pictures. The preview uses three Unsplash stills of gold leaf, paper, and wood. They are captioned as decorative. They are not a founder, a client, a premises, or proof of a service.
 
 | Role | Token | Value | Notes |
 | --- | --- | --- | --- |
