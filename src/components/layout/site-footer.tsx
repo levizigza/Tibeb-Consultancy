@@ -13,7 +13,7 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
 
   return (
     <footer className="bg-surface">
-      <SealRule position="top" />
+      <SealRule />
       <div className="mx-auto grid w-full max-w-page gap-3xl px-gutter py-3xl sm:px-gutter-lg md:grid-cols-[repeat(2,minmax(0,1fr))] lg:grid-cols-[repeat(4,minmax(0,1fr))]">
         <BrandLockup locale={locale} />
         <nav aria-label={chrome.footerNav}>

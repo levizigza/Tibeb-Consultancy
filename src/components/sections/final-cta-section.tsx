@@ -14,7 +14,7 @@ export function FinalCtaSection({
 }) {
   return (
     <section aria-labelledby={id} className="bg-curtain text-curtain-ink">
-      <div className="h-1.5 w-full bg-ornament" aria-hidden="true" data-motion="draw" />
+      <div className="regal-band" aria-hidden="true" data-motion="draw" />
       <div className={`${rhythm.cta} mx-auto w-full max-w-page px-gutter sm:px-gutter-lg`}>
         <div className="max-w-content">
           <h2 id={id} className="text-heading font-semibold">
@@ -28,7 +28,7 @@ export function FinalCtaSection({
           </div>
         </div>
       </div>
-      <div className="h-1.5 w-full bg-ornament" aria-hidden="true" />
+      <div className="regal-band" aria-hidden="true" />
     </section>
   );
 }

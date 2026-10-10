@@ -10,7 +10,7 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
         <BrandLockup locale={locale} />
         <SiteNavigationClient locale={locale} />
       </div>
-      <SealRule position="bottom" />
+      <SealRule />
     </header>
   );
 }

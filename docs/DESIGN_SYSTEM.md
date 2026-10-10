@@ -8,19 +8,19 @@ Tokens live in `src/app/globals.css`. Components live in `src/components/ui`. Th
 
 | Token | Light | Dark | Use |
 | --- | --- | --- | --- |
-| `--background` | `#F4EDE3` parchment | `#1C1410` | Page |
-| `--foreground` | `#2C1E14` seal brown | `#F4EDE3` | Text. About 13.9:1 on parchment, 15.6:1 on the dark page |
+| `--background` | `#F7F4EE` eggshell | `#1C1410` | Page |
+| `--foreground` | `#2C1E14` seal brown | `#F7F4EE` | Text. About 14.7:1 on eggshell, 16.5:1 on the dark page |
 | `--surface` | `#E8DCCE` stone | `#2C211A` | Panels |
-| `--muted` | `#5E4636` | `#D9CBBA` | Secondary text. About 7.5:1 on parchment and 11.4:1 on the dark page |
-| `--accent` | `#3D2A1C` seal | `#F4EDE3` | Button fill. The label is parchment on the seal, or seal brown on parchment in the dark scheme |
-| `--accent-foreground` | `#F4EDE3` | `#2C1E14` | Text on the primary control. About 11.7:1 in the light scheme |
-| `--link` | `#3D2A1C` | `#F4EDE3` | Link text, always underlined |
-| `--focus` | `#2C1E14` | `#F4EDE3` | 2px ring, 3px offset |
-| `--line` | `#7A5E48` | `#B09880` | Borders. About 5.1:1 on parchment |
-| `--notice-surface` | `#E8DCCE` | `#2C211A` | Status panels, with brown or parchment text and a border |
+| `--muted` | `#5E4636` | `#D9CBBA` | Secondary text. About 8.0:1 on eggshell and 11.4:1 on the dark page |
+| `--accent` | `#3D2A1C` seal | `#F7F4EE` | Button fill. The label is eggshell on the seal, or seal brown on eggshell in the dark scheme |
+| `--accent-foreground` | `#F7F4EE` | `#2C1E14` | Text on the primary control. About 12.4:1 in the light scheme |
+| `--link` | `#3D2A1C` | `#F7F4EE` | Link text, always underlined |
+| `--focus` | `#2C1E14` | `#F7F4EE` | 2px ring, 3px offset |
+| `--line` | `#7A5E48` | `#B09880` | Borders. About 5.4:1 on eggshell |
+| `--notice-surface` | `#EDE6D8` | `#2C211A` | Status panels, with brown or eggshell text and a border |
 | `--ornament` | `#C6A56A` gold | `#D4B56A` | Hairline beside the brown rule |
 
-Gold on parchment is about 2:1. It is not a text colour, a link colour, a focus colour, or the only border. The header and footer use the brown line and a gold hairline together. The primary control is seal brown with a gold foot. In the dark scheme the control is parchment, because a brown button on the dark page would fall under the 3:1 boundary rule.
+Gold on eggshell is about 2.1:1. It is not a text colour, a link colour, a focus colour, or the only border. On seal brown it is about 5.8:1, so the diamond-chain band, the corner brackets, and the gold foot of the primary control sit on that brown. In the dark scheme the control is eggshell, because a brown button on the dark page would fall under the 3:1 boundary rule.
 
 A dark panel stays close to the dark page, so panels keep a line border.
 
@@ -89,7 +89,7 @@ The first visit in a session opens on a seal-brown curtain. The wordmark settles
 
 After that, motion and stillness alternate. The homepage title, the gold rule under it, service cards, process numbers, and the closing button rise or draw when they enter the screen. Decorative stills drift slowly inside a seal-brown frame. Headings, body copy, the header, the footer, and the question list stay still. Reduced motion leaves every one of those still.
 
-Gold sits on seal brown, as a band under the header, a band over the footer, a cap on each service card, a foot on the primary control, and a line around each still. On parchment alone it is too faint to see. The stills are Unsplash photographs of gold leaf, paper, and wood. Each caption says they are decorative and not a picture of the business.
+Gold sits on seal brown as a repeating diamond chain: under the header, over the footer, across each service card, under page titles, and along the closing panel. Photograph frames use gold corner brackets on the same brown. On eggshell alone the metal is too faint to see. The stills are Unsplash photographs of gold leaf, paper, and wood. Each caption says they are decorative and not a picture of the business.
 
 ## Components
 

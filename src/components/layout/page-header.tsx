@@ -5,10 +5,7 @@ export function PageHeader({ title, lede }: { title: string; lede: string }) {
         <h1 className="text-title font-semibold tracking-tight" data-motion="enter">
           {title}
         </h1>
-        <div className="mt-6 flex w-24 flex-col" aria-hidden="true" data-motion="draw">
-          <span className="h-1 bg-curtain" />
-          <span className="h-1.5 bg-ornament" />
-        </div>
+        <div className="regal-band mt-6 w-36 max-w-full" aria-hidden="true" data-motion="draw" />
         <p className="mt-lg max-w-content text-body-lg">{lede}</p>
       </div>
     </header>
