@@ -79,7 +79,7 @@ Do not publish a pronunciation, a slogan built from "wisdom," or a textile origi
 1. **Ground, then edge.** Most of the page is ivory and ink. Colour is for action and for one accent, not for a pattern.
 2. **Culture is linguistic.** Ethiopic script appears on approved Amharic and Tigrinya text. It is not sprinkled on English as ornament. Afaan Oromoo uses Latin type.
 3. **Proof over mood.** If a fact is not approved, the layout does not invent a portrait, a crest, or a statistic to fill the gap.
-4. **One dark accent that can carry a label.** Seal brown is the action colour. Gold is the metal edge beside that brown. Gold does not carry text on the parchment page.
+4. **One dark accent that can carry a label.** Navy is the action colour. Gold is the metal edge beside that navy. Gold does not carry text on the ivory page.
 5. **Colour is never the only signal.** Status, links, and errors need text or an icon as well as a hue.
 6. **Motion stays quiet.** Keep the existing durations and the reduced-motion rule. Do not add a weaving animation.
 7. **The same kit in both schemes.** Light is the primary brand. Dark is ink used as the page, not a second palette.
@@ -146,32 +146,32 @@ Why this and not a warmer, more decorated system: the business cannot yet show a
 
 The recommended tokens, for the implementation that follows approval:
 
-The owner asked on 10 October 2026 for gold and brown together, refined enough to read as an official consultancy, and later the same day for a gold pattern on an eggshell page. The structure of Direction A stays: no crest, no founder block, and no gold text on the light page. Teal is retired. Brown does the work of text and controls. The page field is eggshell white. Gold is a diamond chain and corner brackets on seal brown.
+The owner asked on 10 October 2026 for gold and brown together, then for a gold pattern on an eggshell page, and later the same day for a corporate feel mixed with royalty. The structure of Direction A stays: no crest, no founder block, and no gold text on the light page. Teal and seal brown are retired. Navy does the work of text and controls. The page field is ivory. Gold, the complement of navy, is a diamond chain and corner brackets on that navy.
 
 The owner asked the same day for royalty-free pictures, and later for pictures connected to the work on the service map. The page uses Unsplash stills of a pen on paper, an airplane wing, a blank application, a blank resume, and file folders. Each caption says the still is illustrative. They are not a founder, a client, a premises, a government form, or proof of a service.
 
 | Role | Token | Value | Notes |
 | --- | --- | --- | --- |
-| Page | `--background` | `#F7F4EE` | Eggshell white |
-| Text | `--foreground` | `#2C1E14` | Seal brown, about 13.9:1 on parchment |
-| Panel | `--surface` | `#E8DCCE` | Warm stone |
-| Secondary text | `--muted` | `#5E4636` | About 7.5:1 on parchment |
-| Action | `--accent` | `#3D2A1C` | Seal. Parchment label is about 11.7:1 |
-| Text on action | `--accent-foreground` | `#F4EDE3` | Parchment |
-| Lines | `--line` | `#7A5E48` | About 5.1:1 on parchment. Gold is never the only border |
-| Notice | `--notice-surface` | `#E8DCCE` | Stone, with brown text |
-| Ornament only | `--ornament` | `#C6A56A` | Gold hairline. About 2:1 on parchment, so not text or focus |
+| Page | `--background` | `#F3F1EB` | Ivory |
+| Text | `--foreground` | `#101C2E` | Navy, about 15.2:1 on ivory |
+| Panel | `--surface` | `#E4E7EE` | Cool slate |
+| Secondary text | `--muted` | `#3A4960` | About 8.1:1 on ivory |
+| Action | `--accent` | `#15263C` | Navy. Ivory label is about 13.5:1 |
+| Text on action | `--accent-foreground` | `#F3F1EB` | Ivory |
+| Lines | `--line` | `#5A6A82` | About 4.9:1 on ivory. Gold is never the only border |
+| Notice | `--notice-surface` | `#E4E7EE` | Slate, with navy text |
+| Ornament only | `--ornament` | `#C4A15A` | Gold hairline. About 2.2:1 on ivory, so not text or focus |
 
 Dark scheme, if the implementation keeps `prefers-color-scheme`:
 
 | Role | Value | Notes |
 | --- | --- | --- |
-| Page | `#1C1410` | Deep brown |
-| Text | `#F4EDE3` | Parchment, about 15.6:1 |
-| Secondary text | `#D9CBBA` | About 11.4:1 on the dark page |
-| Panel | `#2C211A` | A step only, so panels keep a line border |
-| Action | `#F4EDE3` with seal-brown text | A brown button on this page would fall under 3:1. Links stay parchment and underlined |
-| Focus | `#F4EDE3` | Not gold |
+| Page | `#0B1220` | Midnight navy |
+| Text | `#F3F1EB` | Ivory, about 16.6:1 |
+| Secondary text | `#D2D6DE` | About 12.9:1 on the dark page |
+| Panel | `#162033` | A step only, so panels keep a line border |
+| Action | `#F3F1EB` with navy text | A navy button on this page would fall under 3:1. Links stay ivory and underlined |
+| Focus | `#F3F1EB` | Not gold |
 
 Colour roles in this section still apply. Spacing, type steps, radii, and shadows are specified in `docs/DESIGN_SYSTEM.md`.
 
@@ -203,7 +203,7 @@ Approved direction for the logo:
 - A wordmark, not a crest.
 - Clear space equal to the height of the "T" on all sides.
 - Minimum size: the word "TIBEB" no smaller than 16px on screen.
-- On parchment, the wordmark is seal brown. On the dark page, it is parchment. On the seal control, it is parchment.
+- On ivory, the wordmark is navy. On the dark page, it is ivory. On the navy control, it is ivory.
 - Gold may underline the wordmark only after a designer checks that the link or control does not depend on that line.
 - No flag, lion, cross, globe, or generic "T" monogram. The browser icon is the word TIBEB, not a monogram.
 - Do not stretch, outline, or set the wordmark in a script face.

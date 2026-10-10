@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
 /*
-  Eggshell page, seal brown for text and controls.
-  Gold is --ornament only. It is too faint on eggshell for text, links, or
-  focus, so the pattern sits on seal brown.
+  Ivory page, navy for text and controls.
+  Gold is the complement of navy, used only as --ornament. It is too faint
+  on ivory for text, links, or focus, so the pattern sits on navy.
 */
 :root {
   color-scheme: light;
-  --background: #f7f4ee;
-  --foreground: #2c1e14;
-  --surface: #ede6d8;
-  --muted: #5e4636;
-  --accent: #3d2a1c;
-  --accent-foreground: #f7f4ee;
-  --link: #3d2a1c;
-  --focus: #2c1e14;
-  --line: #7a5e48;
-  --notice-surface: #ede6d8;
-  --ornament: #c6a56a;
-  --curtain: #3d2a1c;
-  --curtain-ink: #f7f4ee;
+  --background: #f3f1eb;
+  --foreground: #101c2e;
+  --surface: #e4e7ee;
+  --muted: #3a4960;
+  --accent: #15263c;
+  --accent-foreground: #f3f1eb;
+  --link: #15263c;
+  --focus: #101c2e;
+  --line: #5a6a82;
+  --notice-surface: #e4e7ee;
+  --ornament: #c4a15a;
+  --curtain: #101c2e;
+  --curtain-ink: #f3f1eb;
   --motion-fast: 150ms;
   --motion-moderate: 250ms;
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
@@ -70,11 +70,11 @@
   --spacing-3xl: 4rem;
   --spacing-4xl: 6rem;
   --spacing-5xl: 8rem;
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --shadow-rest: 0 1px 2px rgb(44 30 20 / 0.08);
-  --shadow-raised: 0 8px 16px rgb(44 30 20 / 0.1);
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.25rem;
+  --shadow-rest: 0 1px 2px rgb(16 28 46 / 0.08);
+  --shadow-raised: 0 8px 16px rgb(16 28 46 / 0.12);
   --max-width-content: 48rem;
   --max-width-page: 75rem;
   --duration-fast: var(--motion-fast);
@@ -90,16 +90,16 @@
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --background: #1c1410;
-    --foreground: #f7f4ee;
-    --surface: #2c211a;
-    --muted: #d9cbba;
-    --accent: #f7f4ee;
-    --accent-foreground: #2c1e14;
-    --link: #f7f4ee;
-    --focus: #f7f4ee;
-    --line: #b09880;
-    --notice-surface: #2c211a;
+    --background: #0b1220;
+    --foreground: #f3f1eb;
+    --surface: #162033;
+    --muted: #d2d6de;
+    --accent: #f3f1eb;
+    --accent-foreground: #101c2e;
+    --link: #f3f1eb;
+    --focus: #f3f1eb;
+    --line: #a7b0c2;
+    --notice-surface: #162033;
     --ornament: #d4b56a;
     --shadow-rest: 0 1px 2px rgb(0 0 0 / 0.35);
     --shadow-raised: 0 8px 16px rgb(0 0 0 / 0.4);

@@ -62,7 +62,7 @@ async function ServiceFamilyContent({
     <>
       <PageHeader title={match.label} lede={scaffoldCopy.familyMessage} />
       <div className="mx-auto w-full max-w-page px-gutter pb-xl sm:px-gutter-lg">
-        <div className="max-w-3xl">
+        <div className="w-full max-w-content">
           <MaterialFrame
             src={serviceStills[match.id].src}
             alt={serviceStills[match.id].alt}

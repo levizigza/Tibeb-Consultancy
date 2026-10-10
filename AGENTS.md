@@ -43,7 +43,7 @@ These standards apply to every change in this repository.
 ## Consistent design tokens
 
 - Colors, type, and surfaces come from the variables in `src/app/globals.css`.
-- Colour, type, and spacing tokens follow Direction A in `docs/BRAND_STRATEGY.md` and `docs/DESIGN_SYSTEM.md`. The page is eggshell white and seal brown. Gold is an ornament on seal brown, including the diamond-chain band. It is not text, a link, or a focus colour. The owner asked on 10 October 2026 for a Latin wordmark, and the same day for a gold pattern. Do not add a Ge'ez lockup, a crest, or a founder block until those checklist rows are approved.
+- Colour, type, and spacing tokens follow Direction A in `docs/BRAND_STRATEGY.md` and `docs/DESIGN_SYSTEM.md`. The page is ivory and navy. Gold is an ornament on navy, including the diamond-chain band. It is not text, a link, or a focus colour. The owner asked on 10 October 2026 for a Latin wordmark, a gold pattern, and later the same day for a corporate palette with royal gold. Do not add a Ge'ez lockup, a crest, or a founder block until those checklist rows are approved.
 - Do not introduce one-off hex colors in components.
 
 ## Multilingual readiness

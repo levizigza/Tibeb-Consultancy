@@ -31,11 +31,11 @@ export async function generateMetadata({
 }
 
 const swatches = [
-  { name: "Parchment", role: "Page background", className: "bg-background" },
-  { name: "Seal brown", role: "Text and light-scheme controls", className: "bg-foreground" },
-  { name: "Stone", role: "Panels", className: "bg-surface" },
-  { name: "Muted brown", role: "Secondary text", className: "bg-muted" },
-  { name: "Seal", role: "Primary button", className: "bg-accent" },
+  { name: "Ivory", role: "Page background", className: "bg-background" },
+  { name: "Navy", role: "Text and light-scheme controls", className: "bg-foreground" },
+  { name: "Slate", role: "Panels", className: "bg-surface" },
+  { name: "Muted navy", role: "Secondary text", className: "bg-muted" },
+  { name: "Navy button", role: "Primary button", className: "bg-accent" },
   { name: "Line", role: "Borders. Gold sits beside this line, not instead of it.", className: "bg-line" },
   { name: "Gold", role: "Hairline only. Not for text, links, or focus on the light page.", className: "bg-ornament" },
 ] as const;
