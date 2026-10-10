@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { rhythm } from "@/components/sections/rhythm";
@@ -8,6 +9,13 @@ export type ServiceGridItem = {
   detail: string;
   status: string;
   children?: ReactNode;
+  image?: {
+    src: string;
+    alt: string;
+    caption: string;
+    width: number;
+    height: number;
+  };
 };
 
 export function ServiceGridSection({
@@ -34,6 +42,22 @@ export function ServiceGridSection({
           {items.map((item) => (
             <li key={item.href} className="overflow-hidden rounded-lg border border-line bg-surface shadow-rest" data-motion="rise">
               <div className="regal-band" aria-hidden="true" />
+              {item.image ? (
+                <figure>
+                  <div className="overflow-hidden">
+                    <Image
+                      src={item.image.src}
+                      alt={item.image.alt}
+                      width={item.image.width}
+                      height={item.image.height}
+                      sizes="(min-width: 48rem) 40vw, 100vw"
+                      className="aspect-[16/10] w-full object-cover"
+                      data-motion="drift"
+                    />
+                  </div>
+                  <figcaption className="px-lg pt-3 text-meta text-muted">{item.image.caption}</figcaption>
+                </figure>
+              ) : null}
               <div className="p-lg">
               <h3 className="text-heading-sm font-semibold">
                 <Link href={item.href} className="underline decoration-link/40 underline-offset-4">

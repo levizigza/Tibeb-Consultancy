@@ -148,7 +148,7 @@ The recommended tokens, for the implementation that follows approval:
 
 The owner asked on 10 October 2026 for gold and brown together, refined enough to read as an official consultancy, and later the same day for a gold pattern on an eggshell page. The structure of Direction A stays: no crest, no founder block, and no gold text on the light page. Teal is retired. Brown does the work of text and controls. The page field is eggshell white. Gold is a diamond chain and corner brackets on seal brown.
 
-The owner asked the same day for royalty-free pictures. The preview uses three Unsplash stills of gold leaf, paper, and wood. They are captioned as decorative. They are not a founder, a client, a premises, or proof of a service.
+The owner asked the same day for royalty-free pictures, and later for pictures connected to the work on the service map. The page uses Unsplash stills of a pen on paper, an airplane wing, a blank application, a blank resume, and file folders. Each caption says the still is illustrative. They are not a founder, a client, a premises, a government form, or proof of a service.
 
 | Role | Token | Value | Notes |
 | --- | --- | --- | --- |

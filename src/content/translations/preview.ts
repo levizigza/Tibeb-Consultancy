@@ -5,9 +5,8 @@ import { locales } from "@/i18n/locales";
 import { localeCopyIsPublishable } from "@/i18n/review/validate";
 
 export const previewCopy = {
-  previewLabel: "Development preview",
   description:
-    "Development preview of the TIBEB Consultancy website. The site is being built and is not open for client services.",
+    "The TIBEB Consultancy website is being built and is not open for client services.",
   introduction: `${businessProfile.positioning.text} This is a temporary development introduction. The public website is still being built.`,
   statusTitle: "This site is being built",
   statusBody:

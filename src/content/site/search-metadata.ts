@@ -15,7 +15,7 @@ export type PageSearchFields = {
 };
 
 const designSystemDescription =
-  "Development preview of interface components and visual states.";
+  "Interface components and visual states. The words are samples, not business claims.";
 
 /**
  * One title and description for each public path.

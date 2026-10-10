@@ -163,7 +163,7 @@ export const staticPages = [
     label: "Resources",
     path: "/resources",
     message:
-      "Guides stay unpublished until a named reviewer approves them. The questions further down describe this development preview.",
+      "Guides stay unpublished until a named reviewer approves them. The questions further down describe this website while it is being built.",
   },
   {
     id: "contact",

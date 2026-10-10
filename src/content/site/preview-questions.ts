@@ -16,7 +16,7 @@ export const previewQuestionSchema = z.object({
 export type PreviewQuestion = z.infer<typeof previewQuestionSchema>;
 
 export const previewQuestionsIntro =
-  "These answers describe this development preview. An approved question-and-answer policy does not exist yet.";
+  "These answers describe this website while it is being built. An approved question-and-answer policy does not exist yet.";
 
 /**
  * Answers restate facts already published on the preview.

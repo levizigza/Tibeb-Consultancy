@@ -89,7 +89,7 @@ The first visit in a session opens on a seal-brown curtain. The wordmark settles
 
 After that, motion and stillness alternate. The homepage title, the gold rule under it, service cards, process numbers, and the closing button rise or draw when they enter the screen. Decorative stills drift slowly inside a seal-brown frame. Headings, body copy, the header, the footer, and the question list stay still. Reduced motion leaves every one of those still.
 
-Gold sits on seal brown as a repeating diamond chain: under the header, over the footer, across each service card, under page titles, and along the closing panel. Photograph frames use gold corner brackets on the same brown. On eggshell alone the metal is too faint to see. The stills are Unsplash photographs of gold leaf, paper, and wood. Each caption says they are decorative and not a picture of the business.
+Gold sits on seal brown as a repeating diamond chain: under the header, over the footer, across each service card, under page titles, and along the closing panel. Photograph frames use gold corner brackets on the same brown. On eggshell alone the metal is too faint to see. The stills are Unsplash photographs of paperwork and the subjects on the service map: a pen on paper, travel, a blank application, a blank resume, and file folders. Each caption says the still is illustrative and not a picture of the business.
 
 ## Components
 

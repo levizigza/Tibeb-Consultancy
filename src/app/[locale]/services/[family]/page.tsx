@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/layout/page-header";
+import { MaterialFrame } from "@/components/sections/material-frame";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { QuietEditorialSection } from "@/components/sections/quiet-editorial-section";
 import { InlineLink } from "@/components/ui/link";
@@ -13,6 +14,7 @@ import {
   servicesInFamily,
 } from "@/content/site/information-architecture";
 import { scaffoldCopy } from "@/content/site/scaffold-copy";
+import { serviceStills } from "@/content/site/work-stills";
 import { replaceLocaleInPath } from "@/i18n/href";
 import { metadataForLocale } from "@/i18n/metadata";
 import { routing } from "@/i18n/routing";
@@ -59,6 +61,19 @@ async function ServiceFamilyContent({
   return (
     <>
       <PageHeader title={match.label} lede={scaffoldCopy.familyMessage} />
+      <div className="mx-auto w-full max-w-page px-gutter pb-xl sm:px-gutter-lg">
+        <div className="max-w-3xl">
+          <MaterialFrame
+            src={serviceStills[match.id].src}
+            alt={serviceStills[match.id].alt}
+            caption={serviceStills[match.id].caption}
+            width={serviceStills[match.id].width}
+            height={serviceStills[match.id].height}
+            sizes="(min-width: 48rem) 48rem, 100vw"
+            aspect="aspect-[16/10]"
+          />
+        </div>
+      </div>
       <QuietEditorialSection id="family-status" title="Publication status">
         <p>{match.restriction}</p>
         <ul className="flex flex-col gap-3 border-t border-line pt-4">

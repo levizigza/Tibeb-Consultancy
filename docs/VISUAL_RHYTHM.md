@@ -4,7 +4,7 @@ The shell uses the Clear ground tokens in `docs/DESIGN_SYSTEM.md` and the routes
 
 No founder portrait or client quotation is invented. Decorative stills are licensed material photographs, and the page says they are not the business. A split section without a supplied image shows the sentence "No photograph has been supplied."
 
-Motion is mixed with stillness. The title, the gold rule, cards, step numbers, and the closing button move once as they enter. The decorative stills drift slowly. Reading sections, the header, and the footer stay still. `prefers-reduced-motion: reduce` keeps the whole page still.
+Motion is mixed with stillness. The title, the gold rule, cards, step numbers, and the closing button move once as they enter. The illustrative stills drift slowly. Reading sections, the header, and the footer stay still. `prefers-reduced-motion: reduce` keeps the whole page still.
 
 ## Breakpoints
 
@@ -46,7 +46,7 @@ Section titles use the heading size. Cards, steps, and prices use the small head
 
 ## Shell
 
-- The brand area is the public name, with the development-preview label above it.
+- The brand area is the public name.
 - Desktop navigation is the primary list. Service groups and Languages are disclosures with `aria-expanded` and `aria-controls`. Arrow keys move inside an open menu. Escape closes it.
 - Below `lg`, Menu opens the same destinations. The closed panel uses the `hidden` attribute, so those links are not in the tab order.
 - Breadcrumbs appear under the translation notice on every page except home. The current page is text, not a link.

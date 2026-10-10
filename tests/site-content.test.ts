@@ -16,7 +16,9 @@ const unpublishedClaims = [
 
 describe("development site content", () => {
   it("identifies the business and states that the site is still being built", () => {
-    expect(previewCopy.previewLabel).toBe("Development preview");
+    expect(previewCopy.description).toContain("is being built");
+    expect(previewCopy.description).toContain("not open for client services");
+    expect(previewCopy.description).not.toContain("Development preview");
     expect(previewCopy.statusTitle).toBe("This site is being built");
     expect(previewCopy.documentationPath).toBe("/development");
     expect(previewCopy.publishedServicesEmpty).toBe(

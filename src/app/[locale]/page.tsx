@@ -8,7 +8,6 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { ProcessSection } from "@/components/sections/process-section";
 import { QuietEditorialSection } from "@/components/sections/quiet-editorial-section";
 import { ServiceGridSection } from "@/components/sections/service-grid-section";
-import { MaterialBand } from "@/components/sections/material-band";
 import { InlineLink } from "@/components/ui/link";
 import { businessProfile } from "@/content/business/profile";
 import {
@@ -20,6 +19,7 @@ import {
 } from "@/content/retrieve";
 import { serviceFamilies } from "@/content/site/information-architecture";
 import { scaffoldCopy } from "@/content/site/scaffold-copy";
+import { serviceStills } from "@/content/site/work-stills";
 import { homePage } from "@/content/translations/home";
 import { replaceLocaleInPath } from "@/i18n/href";
 import { locales, translationStatusLabel } from "@/i18n/locales";
@@ -53,7 +53,6 @@ async function HomeContent({ params }: { params: Promise<{ locale: string }> }) 
   return (
     <>
       <HeroSection
-        eyebrow={homePage.eyebrow}
         title={homePage.title}
         lede={homePage.heroLede}
         actions={[
@@ -68,8 +67,6 @@ async function HomeContent({ params }: { params: Promise<{ locale: string }> }) 
           },
         ]}
       />
-
-      <MaterialBand id="photograph" title={homePage.photoTitle} intro={homePage.photoBody} />
 
       <QuietEditorialSection id="trust" title={homePage.trustTitle}>
         <p>{homePage.trustIntro}</p>
@@ -123,6 +120,7 @@ async function HomeContent({ params }: { params: Promise<{ locale: string }> }) 
           title: family.label,
           detail: family.restriction,
           status: homePage.closedStatus,
+          image: serviceStills[family.id],
         }))}
       />
 

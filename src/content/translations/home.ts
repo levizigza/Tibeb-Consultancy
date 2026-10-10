@@ -1,5 +1,6 @@
 import { businessProfile } from "@/content/business/profile";
 import { scaffoldCopy } from "@/content/site/scaffold-copy";
+import { illustrativeNotice } from "@/content/site/work-stills";
 import { previewCopy } from "@/content/translations/preview";
 
 /**
@@ -9,7 +10,6 @@ import { previewCopy } from "@/content/translations/preview";
 export const homePage = {
   title: businessProfile.publicName,
   description: previewCopy.description,
-  eyebrow: previewCopy.previewLabel,
   heroLede: `${businessProfile.positioning.text} This sentence is a development draft. It is not an approved public claim. ${previewCopy.statusBody}`,
   contactLabel: "Contact",
   contactPath: "/contact",
@@ -23,7 +23,7 @@ export const homePage = {
   governmentValue:
     "No statement about a government relationship has been approved. This page does not present the business as a government channel.",
   servicesTitle: "Services",
-  servicesIntro: `${scaffoldCopy.servicesMessage} ${previewCopy.publishedServicesEmpty}`,
+  servicesIntro: `${scaffoldCopy.servicesMessage} ${previewCopy.publishedServicesEmpty} ${illustrativeNotice}`,
   closedStatus: "Not approved",
   howTitle: "How it works",
   howIntro:
@@ -33,9 +33,6 @@ export const homePage = {
   aboutDraftNote: "This sentence is a development draft. It is not an approved public claim.",
   aboutFounder:
     "No founder name, photograph, or history is approved. This page does not add a founder story.",
-  photoTitle: "Materials",
-  photoBody:
-    "These stills are decorative. They are not the business, a founder, or a client. A photograph of the business appears only after the owner supplies one.",
   supportListLead:
     "These consultation languages are approved for publication. Website language names stay separate from this list.",
   evidenceTitle: "Client evidence",

@@ -15,6 +15,7 @@ import {
   servicesInFamily,
 } from "@/content/site/information-architecture";
 import { scaffoldCopy } from "@/content/site/scaffold-copy";
+import { serviceStills } from "@/content/site/work-stills";
 import { replaceLocaleInPath } from "@/i18n/href";
 import { metadataForLocale } from "@/i18n/metadata";
 import { routing } from "@/i18n/routing";
@@ -66,6 +67,7 @@ async function ServicesContent({
           title: family.label,
           detail: family.restriction,
           status: "Not approved",
+          image: serviceStills[family.id],
           children: (
             <ul className="mt-4 flex flex-col gap-2 border-t border-line pt-4">
               {servicesInFamily(family.id).map((service) => (

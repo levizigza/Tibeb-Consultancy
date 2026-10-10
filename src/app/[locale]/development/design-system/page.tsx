@@ -59,7 +59,6 @@ async function DesignSystemContent({
   return (
     <PageContainer>
       <Measure>
-        <p className="text-meta font-medium text-muted">Development preview</p>
         <Heading level={1}>Design system</Heading>
         <p className="mt-4 text-body">
           Sample interface states. The words in this preview are not business claims, quotations, or
