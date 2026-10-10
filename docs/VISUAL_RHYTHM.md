@@ -11,7 +11,7 @@ No photograph, founder, or client quotation is invented. A split section without
 | Under `lg` (64rem) | Menu button opens the page list and the four service groups. Languages is a separate disclosure. | One column. Hero and ending sections keep their large padding. |
 | `lg` and up | The page list is a row. Services stays a link, and Service groups opens the four real group pages. | Service cards sit in two columns. The split section sits in two columns. |
 
-Page content stays inside the 1200px container. Reading text stays inside 48rem.
+Page content stays inside the 1200px container. Reading text stays inside 48rem. The same pages also stay inside a 240px-wide screen, a phone in landscape, a tablet, and a wide monitor. Side padding uses a small share of the screen so it cannot consume a narrow display. Open menus stay within the screen and scroll if the display is short. Text at twice the normal size wraps inside the page instead of widening it.
 
 ## Spacing by section
 

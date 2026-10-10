@@ -26,7 +26,7 @@ const fieldId: Record<InquiryField, string> = {
 };
 
 const controlClass =
-  "min-h-11 w-full rounded-md border border-line bg-background px-3 text-body text-foreground aria-invalid:border-foreground";
+  "min-h-11 w-full min-w-0 max-w-full rounded-md border border-line bg-background px-3 text-body text-foreground aria-invalid:border-foreground";
 
 async function previewInquiryAction(): Promise<InquiryState> {
   return { status: "not-delivered", fieldErrors: [] };
@@ -63,7 +63,7 @@ export function InquiryForm({
   return (
     <form
       action={formAction}
-      className="flex max-w-content flex-col gap-6"
+      className="flex w-full min-w-0 max-w-content flex-col gap-6"
       lang="en"
       noValidate
       onSubmit={(event) => {
@@ -159,16 +159,16 @@ export function InquiryForm({
       </Field>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor={fieldId.privacyAcknowledgement} className="flex min-h-11 items-start gap-3 text-body">
+        <label htmlFor={fieldId.privacyAcknowledgement} className="flex min-h-11 w-full min-w-0 items-start gap-3 text-body">
           <input id={fieldId.privacyAcknowledgement} name="privacyAcknowledgement" type="checkbox" required className="mt-1 size-6 shrink-0" aria-invalid={errorFor("privacyAcknowledgement") ? true : undefined} aria-describedby={errorFor("privacyAcknowledgement") ? `${fieldId.privacyAcknowledgement}-error` : undefined} />
-          <span>
+          <span className="min-w-0">
             {inquiryMessages.privacy} <span className="text-muted">({inquiryMessages.required})</span>
           </span>
         </label>
         <FieldError id={`${fieldId.privacyAcknowledgement}-error`} message={errorFor("privacyAcknowledgement")} />
       </div>
 
-      <div className="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+      <div className="absolute h-px w-px overflow-hidden opacity-0 [contain:strict]" aria-hidden="true">
         <label htmlFor="companyWebsite">Company website</label>
         <input id="companyWebsite" name="companyWebsite" type="text" tabIndex={-1} autoComplete="off" defaultValue="" />
       </div>
@@ -198,7 +198,7 @@ function Field({
   children: ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="grid w-full min-w-0 gap-2">
       <label htmlFor={fieldId[field]} className="text-meta font-medium">
         {label} {required ? <span className="text-muted">({inquiryMessages.required})</span> : null}
       </label>
@@ -221,9 +221,9 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 function Radio({ name, value, label }: { name: string; value: string; label: string }) {
   const id = `inquiry-method-${value}`;
   return (
-    <label htmlFor={id} className="flex min-h-11 items-center gap-3 text-body">
-      <input id={id} name={name} type="radio" value={value} required className="size-6" />
-      {label}
+    <label htmlFor={id} className="flex min-h-11 w-full min-w-0 items-center gap-3 text-body">
+      <input id={id} name={name} type="radio" value={value} required className="size-6 shrink-0" />
+      <span className="min-w-0">{label}</span>
     </label>
   );
 }

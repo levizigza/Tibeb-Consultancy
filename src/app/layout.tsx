@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { notoSans, notoSansEthiopic } from "@/app/fonts";
 import { SkipLink } from "@/components/layout/skip-link";
 import { previewCopy } from "@/content/translations/preview";
@@ -9,6 +9,12 @@ import "./globals.css";
 
 const origin = publicSiteOrigin();
 const organization = organizationJsonLd(origin);
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   ...(origin ? { metadataBase: new URL(origin) } : {}),

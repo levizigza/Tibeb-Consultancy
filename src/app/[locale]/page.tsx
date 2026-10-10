@@ -75,7 +75,7 @@ async function HomeContent({ params }: { params: Promise<{ locale: string }> }) 
           {locales.map((item) => (
             <li
               key={item.code}
-              className="flex flex-col gap-1 border-t border-line pt-3 sm:flex-row sm:items-baseline sm:justify-between"
+              className="flex flex-col gap-1 border-t border-line pt-3 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between"
             >
               <InlineLink href={replaceLocaleInPath("/", item.code)} hrefLang={item.code}>
                 <span
@@ -88,7 +88,7 @@ async function HomeContent({ params }: { params: Promise<{ locale: string }> }) 
                   <span className="font-normal text-muted"> ({item.englishName})</span>
                 )}
               </InlineLink>
-              <span className="text-meta text-muted">{translationStatusLabel[item.translationStatus]}</span>
+              <span className="max-w-full text-meta text-muted">{translationStatusLabel[item.translationStatus]}</span>
             </li>
           ))}
         </ul>

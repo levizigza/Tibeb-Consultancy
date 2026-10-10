@@ -139,10 +139,10 @@ export function ServiceFinder({
                       }}
                       type="button"
                       aria-pressed={selected}
-                      className="flex min-h-16 w-full items-center justify-between gap-md rounded-lg border border-line bg-surface p-lg text-start text-body font-medium shadow-rest transition-shadow duration-fast ease-standard aria-pressed:border-foreground aria-pressed:bg-background"
+                      className="flex min-h-16 w-full min-w-0 items-center justify-between gap-md rounded-lg border border-line bg-surface p-lg text-start text-body font-medium shadow-rest transition-shadow duration-fast ease-standard aria-pressed:border-foreground aria-pressed:bg-background"
                       onClick={() => setState((current) => reduceFinder(current, { type: "choose", intentId: item.id }))}
                     >
-                      <span>{item.prompt}</span>
+                      <span className="min-w-0">{item.prompt}</span>
                       {selected ? <span className="shrink-0 text-meta text-muted">{messages.selected}</span> : null}
                     </button>
                   </li>

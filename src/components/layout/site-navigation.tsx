@@ -15,6 +15,9 @@ import { resolveChrome } from "@/i18n/messages/resolve";
 const linkClass =
   "inline-flex min-h-11 max-w-full items-center whitespace-normal py-1 text-start font-medium text-foreground underline-offset-4 hover:underline";
 
+const mobileLinkClass =
+  "block min-h-11 w-full max-w-full py-2 text-start font-medium text-foreground underline-offset-4 hover:underline";
+
 function currentState(pathname: string, href: string, path: string) {
   const exact = pathname === href || (path === "/" && pathname === `${href}/`);
   const inSection = path !== "/" && (pathname === href || pathname.startsWith(`${href}/`));
@@ -84,12 +87,12 @@ export function SiteNavigation({ locale, pathname }: { locale: LocaleCode; pathn
   const desktopLinks = primaryNavigation.filter((item) => item.id !== "services");
 
   return (
-    <div className="flex w-full min-w-0 flex-col gap-2 lg:w-auto">
+    <div className="relative flex w-full min-w-0 max-w-full flex-col gap-2 lg:w-auto">
       <div className="flex max-w-full flex-wrap items-center justify-end gap-2">
         <button
           ref={mobileRef}
           type="button"
-          className="inline-flex min-h-11 max-w-full items-center whitespace-normal rounded-md border border-line px-3 text-start font-medium lg:hidden"
+          className="inline-flex min-h-11 max-w-full flex-wrap items-center whitespace-normal rounded-md border border-line px-3 text-start font-medium lg:hidden"
           aria-expanded={state.open === "mobile"}
           aria-controls={`${baseId}-mobile`}
           onClick={() => dispatch({ type: "toggle", menu: "mobile" })}
@@ -118,7 +121,7 @@ export function SiteNavigation({ locale, pathname }: { locale: LocaleCode; pathn
               <button
                 ref={servicesButtonRef}
                 type="button"
-                className="inline-flex min-h-11 max-w-full items-center gap-1 whitespace-normal rounded-md px-2 text-start font-medium"
+                className="inline-flex min-h-11 max-w-full flex-wrap items-center gap-1 whitespace-normal rounded-md px-2 text-start font-medium"
                 aria-expanded={state.open === "services"}
                 aria-controls={`${baseId}-services`}
                 onClick={() => dispatch({ type: "toggle", menu: "services" })}
@@ -142,7 +145,7 @@ export function SiteNavigation({ locale, pathname }: { locale: LocaleCode; pathn
               <ul
                 id={`${baseId}-services`}
                 hidden={state.open !== "services"}
-                className="absolute top-full left-0 z-10 min-w-72 rounded-md border border-line bg-background p-2 shadow-rest"
+                className="absolute top-full left-0 z-10 max-h-[min(24rem,70dvh)] w-72 overflow-y-auto rounded-md border border-line bg-background p-2 shadow-rest"
                 onKeyDown={(event) => move("services", event.key)}
               >
                 {serviceFamilies.map((family, index) => (
@@ -179,11 +182,11 @@ export function SiteNavigation({ locale, pathname }: { locale: LocaleCode; pathn
               })}
           </ul>
         </nav>
-        <div className="relative">
+        <div className="max-w-full">
           <button
             ref={languagesButtonRef}
             type="button"
-            className="inline-flex min-h-11 max-w-full items-center gap-1 whitespace-normal rounded-md border border-line px-3 text-start font-medium"
+            className="inline-flex min-h-11 max-w-full flex-wrap items-center gap-1 whitespace-normal rounded-md border border-line px-3 text-start font-medium"
             aria-expanded={state.open === "languages"}
             aria-controls={`${baseId}-languages`}
             onClick={() => dispatch({ type: "toggle", menu: "languages" })}
@@ -208,7 +211,7 @@ export function SiteNavigation({ locale, pathname }: { locale: LocaleCode; pathn
             id={`${baseId}-languages`}
             hidden={state.open !== "languages"}
             aria-label={chrome.languages}
-            className="absolute top-full right-0 z-10 mt-1 min-w-64 rounded-md border border-line bg-background p-2 shadow-rest"
+            className="absolute inset-x-0 top-full z-10 mt-1 max-h-[min(24rem,70dvh)] overflow-y-auto rounded-md border border-line bg-background p-2 shadow-rest lg:inset-x-auto lg:right-0 lg:w-64"
             onKeyDown={(event) => move("languages", event.key)}
           >
             <li className="px-3 py-2 text-meta text-muted" lang="en">
@@ -254,7 +257,7 @@ export function SiteNavigation({ locale, pathname }: { locale: LocaleCode; pathn
                 <Link
                   href={href}
                   aria-current={currentState(pathname, href, item.path)}
-                  className={linkClass}
+                  className={mobileLinkClass}
                   onClick={() => dispatch({ type: "close" })}
                 >
                   {chrome.nav[item.id]}
@@ -265,7 +268,7 @@ export function SiteNavigation({ locale, pathname }: { locale: LocaleCode; pathn
                       <li key={family.id}>
                         <Link
                           href={replaceLocaleInPath(family.path, locale)}
-                          className={linkClass}
+                          className={mobileLinkClass}
                           onClick={() => dispatch({ type: "close" })}
                         >
                           {family.label}

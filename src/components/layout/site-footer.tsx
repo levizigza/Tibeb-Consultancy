@@ -12,7 +12,7 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
 
   return (
     <footer className="border-t border-line bg-surface">
-      <div className="mx-auto grid w-full max-w-page gap-3xl px-gutter py-3xl sm:px-gutter-lg md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto grid w-full max-w-page gap-3xl px-gutter py-3xl sm:px-gutter-lg md:grid-cols-[repeat(2,minmax(0,1fr))] lg:grid-cols-[repeat(4,minmax(0,1fr))]">
         <BrandLockup locale={locale} />
         <nav aria-label={chrome.footerNav}>
           <h2 className="text-meta font-semibold">{chrome.pages}</h2>
@@ -21,7 +21,7 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
               <li key={item.id}>
                 <Link
                   href={replaceLocaleInPath(item.path, locale)}
-                  className="inline-flex min-h-11 items-center font-medium underline-offset-4 hover:underline"
+                  className="block min-h-11 w-full max-w-full py-2 font-medium underline-offset-4 hover:underline"
                 >
                   {chrome.nav[item.id]}
                 </Link>
@@ -37,7 +37,7 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
               <li key={family.id}>
                 <Link
                   href={replaceLocaleInPath(family.path, locale)}
-                  className="inline-flex min-h-11 items-center font-medium underline-offset-4 hover:underline"
+                  className="block min-h-11 w-full max-w-full py-2 font-medium underline-offset-4 hover:underline"
                 >
                   {family.label}
                 </Link>
@@ -49,7 +49,7 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
           <ContactCta locale={locale} quiet />
           <Link
             href={replaceLocaleInPath(previewCopy.documentationPath, locale)}
-            className="inline-flex min-h-11 w-fit items-center font-medium text-link underline decoration-link/40 underline-offset-4"
+            className="block min-h-11 w-full max-w-full py-2 font-medium text-link underline decoration-link/40 underline-offset-4"
           >
             {previewCopy.documentationLabel}
           </Link>

@@ -5,7 +5,7 @@ import type { LocaleCode } from "@/i18n/locales";
 export function SiteHeader({ locale }: { locale: LocaleCode }) {
   return (
     <header className="border-b border-line bg-background">
-      <div className="mx-auto flex w-full max-w-page flex-wrap items-start justify-between gap-4 px-gutter py-3 sm:px-gutter-lg">
+      <div className="mx-auto flex w-full min-w-0 max-w-page flex-wrap items-start justify-between gap-4 px-gutter py-3 sm:px-gutter-lg">
         <BrandLockup locale={locale} />
         <SiteNavigationClient locale={locale} />
       </div>

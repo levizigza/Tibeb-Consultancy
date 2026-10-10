@@ -69,14 +69,14 @@ async function ServicesContent({
           children: (
             <ul className="mt-4 flex flex-col gap-2 border-t border-line pt-4">
               {servicesInFamily(family.id).map((service) => (
-                <li key={service.id} className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                <li key={service.id} className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between">
                   <InlineLink
                     href={replaceLocaleInPath(service.path, locale)}
-                    className="inline-flex min-h-11 max-w-full items-center"
+                    className="block min-h-11 max-w-full py-2"
                   >
                     {service.label}
                   </InlineLink>
-                  <span className="text-meta text-muted">
+                  <span className="max-w-full text-meta text-muted">
                     {bookableIds.has(service.id) ? "Gate open, no request flow" : "Not approved"}
                   </span>
                 </li>

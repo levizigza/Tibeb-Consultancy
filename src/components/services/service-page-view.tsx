@@ -67,11 +67,11 @@ function RelatedList({
     <QuietEditorialSection id="related-services" title={title}>
       <ul className="flex flex-col gap-3 border-t border-line pt-4">
         {items.map((item) => (
-          <li key={item.href} className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+          <li key={item.href} className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between">
             <Link href={item.href} className={linkClassName}>
               {item.title}
             </Link>
-            <span className="text-meta text-muted">{item.status}</span>
+            <span className="max-w-full text-meta text-muted">{item.status}</span>
           </li>
         ))}
       </ul>

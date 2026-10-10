@@ -54,7 +54,7 @@ describe("quality safeguards", () => {
     );
     expect(form).toContain('aria-live="assertive"');
     expect(form).toContain('lang="en"');
-    expect(form).toContain('class="size-6"');
+    expect(form).toContain("size-6");
     expect(form).not.toContain('role="radiogroup"');
     expect(form.match(/role="alert"/g)).toBeNull();
   });

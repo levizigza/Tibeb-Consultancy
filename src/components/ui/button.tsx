@@ -19,7 +19,7 @@ const sizes = {
 
 export function buttonClassName(variant: keyof typeof variants, size: keyof typeof sizes, className?: string) {
   return [
-    "inline-flex items-center justify-center rounded-md font-medium transition-shadow duration-fast ease-standard",
+    "inline-flex max-w-full items-center justify-center whitespace-normal rounded-md text-center font-medium transition-shadow duration-fast ease-standard",
     "disabled:cursor-not-allowed disabled:border disabled:border-line disabled:bg-surface disabled:text-muted disabled:shadow-none",
     variants[variant],
     sizes[size],

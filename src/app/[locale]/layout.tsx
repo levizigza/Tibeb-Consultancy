@@ -34,7 +34,7 @@ export default async function LocaleLayout({
     <div
       lang={renderedLanguage}
       className={[
-        "flex flex-1 flex-col",
+        "flex w-full min-w-0 max-w-full flex-1 flex-col",
         renderedScript === "ethiopic" ? notoSansEthiopic.className : undefined,
       ]
         .filter(Boolean)
