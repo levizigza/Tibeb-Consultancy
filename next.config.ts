@@ -6,6 +6,9 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 const githubPages = process.env.GITHUB_PAGES === "true";
 
 const nextConfig: NextConfig = {
+  env: {
+    NEXT_PUBLIC_BASE_PATH: githubPages ? "/Tibeb-Consultancy" : "",
+  },
   ...(githubPages
     ? {
         output: "export",

@@ -2,12 +2,18 @@
  * Licensed decorative stills. They are not photographs of the business.
  * Unsplash License: https://unsplash.com/license
  */
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+function publicFile(path: string) {
+  return `${basePath}${path}`;
+}
+
 export const decorativeNotice =
   "These stills are decorative. They are not the business, a founder, or a client. A photograph of the business appears only after the owner supplies one.";
 
 export const decorativeStills = [
   {
-    src: "/visuals/gold-leaf.jpg",
+    src: publicFile("/visuals/gold-leaf.jpg"),
     alt: "Crushed gold leaf with a bright fold across the surface.",
     caption: "Gold leaf. Decorative still. Unsplash License.",
     width: 1600,
@@ -15,7 +21,7 @@ export const decorativeStills = [
     credit: "https://unsplash.com/photos/Hjp111tSqKc",
   },
   {
-    src: "/visuals/parchment.jpg",
+    src: publicFile("/visuals/parchment.jpg"),
     alt: "A sheet of warm, worn paper.",
     caption: "Paper. Decorative still. Unsplash License.",
     width: 1400,
@@ -23,7 +29,7 @@ export const decorativeStills = [
     credit: "https://unsplash.com/photos/crYIoXxuOgc",
   },
   {
-    src: "/visuals/dark-wood.jpg",
+    src: publicFile("/visuals/dark-wood.jpg"),
     alt: "Dark brown wood grain.",
     caption: "Wood. Decorative still. Unsplash License.",
     width: 1400,
