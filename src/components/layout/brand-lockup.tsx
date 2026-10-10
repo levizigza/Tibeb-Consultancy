@@ -11,7 +11,7 @@ export function BrandLockup({ locale }: { locale: LocaleCode }) {
     <div className="flex max-w-full flex-col gap-1">
       <p className="max-w-full text-meta text-muted">{previewCopy.previewLabel}</p>
       <Link href={replaceLocaleInPath("/", locale)} className="w-fit text-foreground">
-        <span className="block text-lg font-semibold tracking-[0.04em]">{wordmark}</span>
+        <span className="block w-fit border-b border-ornament pb-0.5 text-lg font-semibold tracking-[0.14em]">{wordmark}</span>
         {rest ? <span className="block text-meta font-medium">{rest}</span> : null}
       </Link>
     </div>

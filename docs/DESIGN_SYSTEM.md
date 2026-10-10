@@ -8,21 +8,21 @@ Tokens live in `src/app/globals.css`. Components live in `src/components/ui`. Th
 
 | Token | Light | Dark | Use |
 | --- | --- | --- | --- |
-| `--background` | `#F7F4EE` ivory | `#17232D` ink | Page |
-| `--foreground` | `#17232D` | `#F7F4EE` | Text. 14.55:1 on the page |
-| `--surface` | `#E7E3DB` stone | `#24343C` | Panels. Ink on stone is 12.48:1 |
-| `--muted` | `#3E4C57` | `#C8C2B8` | Secondary text. 8.05:1 on ivory, 9.02:1 on ink |
-| `--accent` | `#17675E` teal | `#17675E` | Button fill. Ivory label is 6.10:1 |
-| `--accent-foreground` | `#F7F4EE` | `#F7F4EE` | Text on a teal control |
-| `--link` | `#17675E` | `#F7F4EE` | Link text. Teal on ink is 2.39:1, so dark-scheme links are ivory and underlined |
-| `--focus` | `#17232D` | `#F7F4EE` | 2px ring, 3px offset |
-| `--line` | `#857E76` | `#857E76` | Borders. 3.65:1 on ivory and 3.99:1 on ink |
-| `--notice-surface` | `#E7E3DB` | `#24343C` | Status panels, with ink or ivory text and a border |
-| `--ornament` | `#B6883F` gold | `#B6883F` | Swatch only |
+| `--background` | `#F4EDE3` parchment | `#1C1410` | Page |
+| `--foreground` | `#2C1E14` seal brown | `#F4EDE3` | Text. About 13.9:1 on parchment, 15.6:1 on the dark page |
+| `--surface` | `#E8DCCE` stone | `#2C211A` | Panels |
+| `--muted` | `#5E4636` | `#D9CBBA` | Secondary text. About 7.5:1 on parchment and 11.4:1 on the dark page |
+| `--accent` | `#3D2A1C` seal | `#F4EDE3` | Button fill. The label is parchment on the seal, or seal brown on parchment in the dark scheme |
+| `--accent-foreground` | `#F4EDE3` | `#2C1E14` | Text on the primary control. About 11.7:1 in the light scheme |
+| `--link` | `#3D2A1C` | `#F4EDE3` | Link text, always underlined |
+| `--focus` | `#2C1E14` | `#F4EDE3` | 2px ring, 3px offset |
+| `--line` | `#7A5E48` | `#B09880` | Borders. About 5.1:1 on parchment |
+| `--notice-surface` | `#E8DCCE` | `#2C211A` | Status panels, with brown or parchment text and a border |
+| `--ornament` | `#C6A56A` gold | `#D4B56A` | Hairline beside the brown rule |
 
-Gold on ivory is 2.91:1. It is not a text colour, a link colour, a focus colour, or the only border. The strategy suggested `#C8C2B8` for lines. That pair is 1.61:1 on ivory, so the line token is `#857E76`.
+Gold on parchment is about 2:1. It is not a text colour, a link colour, a focus colour, or the only border. The header and footer use the brown line and a gold hairline together. The primary control is seal brown with a gold foot. In the dark scheme the control is parchment, because a brown button on the dark page would fall under the 3:1 boundary rule.
 
-A dark panel is only 1.24:1 against the ink page, so panels keep a line border.
+A dark panel stays close to the dark page, so panels keep a line border.
 
 ## Type
 
@@ -88,8 +88,8 @@ Motion is 150ms and 250ms, with the standard ease. `prefers-reduced-motion: redu
 
 | Component | Variants and states |
 | --- | --- |
-| Button | Primary (teal, ivory label), secondary (ivory, line border), quiet (underlined link colour). Sizes `sm` and `md`, at least 40px and 44px tall. Disabled uses stone and muted text, which stay above 4.5:1. |
-| Link | Underlined. Light scheme is teal. Dark scheme is ivory. |
+| Button | Primary (seal brown, parchment label, gold foot), secondary (parchment, line border), quiet (underlined link colour). Sizes `sm` and `md`, at least 40px and 44px tall. Disabled uses stone and muted text, which stay above 4.5:1. |
+| Link | Underlined. Light scheme is seal brown. Dark scheme is parchment. |
 | Container | Page width or reading measure. |
 | Section | Landmark labelled by its heading. |
 | Heading | Levels 1 to 4. One `h1` on a page. |
@@ -107,7 +107,7 @@ Motion is 150ms and 250ms, with the standard ease. `prefers-reduced-motion: redu
 ## Accessibility decisions
 
 - Body text, secondary text, button labels, and field errors meet WCAG 2.2 AA.
-- Focus is a 2px ink ring on ivory, offset 3px, including on teal buttons. An ivory ring offset onto an ivory page would disappear, so the ring uses ink wherever the page is ivory. In the dark scheme the ring is ivory on ink.
+- Focus is a 2px seal-brown ring on parchment, offset 3px. In the dark scheme the ring is parchment. Gold is not the focus colour.
 - Status, steps, and errors include text.
 - Controls are keyboard reachable and at least 44px on the medium button and navigation links.
 - Ethiopic text sets `lang` and the Ethiopic font on that element only.

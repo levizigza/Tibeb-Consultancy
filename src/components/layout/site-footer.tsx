@@ -11,7 +11,7 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
   const chrome = resolveChrome(locale).messages;
 
   return (
-    <footer className="border-t border-line bg-surface">
+    <footer className="edge-rule-top border-t border-line bg-surface">
       <div className="mx-auto grid w-full max-w-page gap-3xl px-gutter py-3xl sm:px-gutter-lg md:grid-cols-[repeat(2,minmax(0,1fr))] lg:grid-cols-[repeat(4,minmax(0,1fr))]">
         <BrandLockup locale={locale} />
         <nav aria-label={chrome.footerNav}>

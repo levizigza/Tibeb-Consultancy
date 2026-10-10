@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 /*
-  Clear ground. Gold is --ornament only: it fails as text on ivory (2.91:1)
-  and as a sole boundary. The line token is darker than the strategy's
-  #C8C2B8 because that value is 1.61:1 on ivory and fails the 3:1 UI rule.
+  Seal and parchment. Brown carries text, links, and controls.
+  Gold is --ornament only: #C6A56A on parchment is about 2:1, so it is a
+  hairline beside the brown rule, never text, a link, or the only boundary.
 */
 :root {
   color-scheme: light;
-  --background: #f7f4ee;
-  --foreground: #17232d;
-  --surface: #e7e3db;
-  --muted: #3e4c57;
-  --accent: #17675e;
-  --accent-foreground: #f7f4ee;
-  --link: #17675e;
-  --focus: #17232d;
-  --line: #857e76;
-  --notice-surface: #e7e3db;
-  --ornament: #b6883f;
+  --background: #f4ede3;
+  --foreground: #2c1e14;
+  --surface: #e8dcce;
+  --muted: #5e4636;
+  --accent: #3d2a1c;
+  --accent-foreground: #f4ede3;
+  --link: #3d2a1c;
+  --focus: #2c1e14;
+  --line: #7a5e48;
+  --notice-surface: #e8dcce;
+  --ornament: #c6a56a;
   --motion-fast: 150ms;
   --motion-moderate: 250ms;
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
@@ -67,8 +67,8 @@
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
-  --shadow-rest: 0 1px 2px rgb(23 35 45 / 0.06);
-  --shadow-raised: 0 8px 16px rgb(23 35 45 / 0.08);
+  --shadow-rest: 0 1px 2px rgb(44 30 20 / 0.08);
+  --shadow-raised: 0 8px 16px rgb(44 30 20 / 0.1);
   --max-width-content: 48rem;
   --max-width-page: 75rem;
   --duration-fast: var(--motion-fast);
@@ -84,18 +84,19 @@
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --background: #17232d;
-    --foreground: #f7f4ee;
-    --surface: #24343c;
-    --muted: #c8c2b8;
-    --accent: #17675e;
-    --accent-foreground: #f7f4ee;
-    --link: #f7f4ee;
-    --focus: #f7f4ee;
-    --line: #857e76;
-    --notice-surface: #24343c;
-    --shadow-rest: 0 1px 2px rgb(0 0 0 / 0.3);
-    --shadow-raised: 0 8px 16px rgb(0 0 0 / 0.35);
+    --background: #1c1410;
+    --foreground: #f4ede3;
+    --surface: #2c211a;
+    --muted: #d9cbba;
+    --accent: #f4ede3;
+    --accent-foreground: #2c1e14;
+    --link: #f4ede3;
+    --focus: #f4ede3;
+    --line: #b09880;
+    --notice-surface: #2c211a;
+    --ornament: #d4b56a;
+    --shadow-rest: 0 1px 2px rgb(0 0 0 / 0.35);
+    --shadow-raised: 0 8px 16px rgb(0 0 0 / 0.4);
   }
 }
 
@@ -150,6 +151,14 @@ body > * {
 .focus-target:focus {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
+}
+
+.edge-rule-bottom {
+  box-shadow: inset 0 -1px 0 var(--ornament);
+}
+
+.edge-rule-top {
+  box-shadow: inset 0 1px 0 var(--ornament);
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -31,13 +31,13 @@ export async function generateMetadata({
 }
 
 const swatches = [
-  { name: "Ivory", role: "Page background", className: "bg-background" },
-  { name: "Ink", role: "Text", className: "bg-foreground" },
+  { name: "Parchment", role: "Page background", className: "bg-background" },
+  { name: "Seal brown", role: "Text and light-scheme controls", className: "bg-foreground" },
   { name: "Stone", role: "Panels", className: "bg-surface" },
-  { name: "Muted ink", role: "Secondary text", className: "bg-muted" },
-  { name: "Teal", role: "Buttons and light-scheme links", className: "bg-accent" },
-  { name: "Line", role: "Borders", className: "bg-line" },
-  { name: "Gold", role: "Ornament only. Not for text, links, or focus.", className: "bg-ornament" },
+  { name: "Muted brown", role: "Secondary text", className: "bg-muted" },
+  { name: "Seal", role: "Primary button", className: "bg-accent" },
+  { name: "Line", role: "Borders. Gold sits beside this line, not instead of it.", className: "bg-line" },
+  { name: "Gold", role: "Hairline only. Not for text, links, or focus on the light page.", className: "bg-ornament" },
 ] as const;
 
 export default async function DesignSystemPage({

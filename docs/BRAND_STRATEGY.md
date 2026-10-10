@@ -79,7 +79,7 @@ Do not publish a pronunciation, a slogan built from "wisdom," or a textile origi
 1. **Ground, then edge.** Most of the page is ivory and ink. Colour is for action and for one accent, not for a pattern.
 2. **Culture is linguistic.** Ethiopic script appears on approved Amharic and Tigrinya text. It is not sprinkled on English as ornament. Afaan Oromoo uses Latin type.
 3. **Proof over mood.** If a fact is not approved, the layout does not invent a portrait, a crest, or a statistic to fill the gap.
-4. **One accent that can carry text.** Teal is the action colour because ivory type on it meets WCAG 2.2 AA. Gold does not.
+4. **One dark accent that can carry a label.** Seal brown is the action colour. Gold is the metal edge beside that brown. Gold does not carry text on the parchment page.
 5. **Colour is never the only signal.** Status, links, and errors need text or an icon as well as a hue.
 6. **Motion stays quiet.** Keep the existing durations and the reduced-motion rule. Do not add a weaving animation.
 7. **The same kit in both schemes.** Light is the primary brand. Dark is ink used as the page, not a second palette.
@@ -146,28 +146,30 @@ Why this and not a warmer, more decorated system: the business cannot yet show a
 
 The recommended tokens, for the implementation that follows approval:
 
+The owner asked on 10 October 2026 for gold and brown together, refined enough to read as an official consultancy. The structure of Direction A stays: no pattern, no crest, no founder block, and no gold text on the light page. Teal is retired. Brown does the work of text and controls. Gold is the hairline.
+
 | Role | Token | Value | Notes |
 | --- | --- | --- | --- |
-| Page | `--background` | `#F7F4EE` | Warm ivory |
-| Text | `--foreground` | `#17232D` | Deep ink |
-| Panel | `--surface` | `#E7E3DB` | Light stone |
-| Secondary text | `--muted` | `#3E4C57` | Muted ink, 8.05:1 on ivory |
-| Action | `--accent` | `#17675E` | Deep teal |
-| Text on action | `--accent-foreground` | `#F7F4EE` | Ivory |
-| Lines | `--line` | `#857E76` | Darkened from `#C8C2B8`, which is 1.61:1 on ivory and fails the 3:1 boundary rule. Do not use gold as the only input border |
-| Notice | `--notice-surface` | `#E7E3DB` | Same stone, with ink text. Do not rely on gold for warnings. |
-| Ornament only | `--ornament` | `#B6883F` | Restrained gold. Not a text, link, border, or focus colour. |
+| Page | `--background` | `#F4EDE3` | Parchment |
+| Text | `--foreground` | `#2C1E14` | Seal brown, about 13.9:1 on parchment |
+| Panel | `--surface` | `#E8DCCE` | Warm stone |
+| Secondary text | `--muted` | `#5E4636` | About 7.5:1 on parchment |
+| Action | `--accent` | `#3D2A1C` | Seal. Parchment label is about 11.7:1 |
+| Text on action | `--accent-foreground` | `#F4EDE3` | Parchment |
+| Lines | `--line` | `#7A5E48` | About 5.1:1 on parchment. Gold is never the only border |
+| Notice | `--notice-surface` | `#E8DCCE` | Stone, with brown text |
+| Ornament only | `--ornament` | `#C6A56A` | Gold hairline. About 2:1 on parchment, so not text or focus |
 
 Dark scheme, if the implementation keeps `prefers-color-scheme`:
 
 | Role | Value | Notes |
 | --- | --- | --- |
-| Page | `#17232D` | Ink |
-| Text | `#F7F4EE` | Ivory, 14.55:1 |
-| Secondary text | `#C8C2B8` | 9.02:1 on ink |
-| Panel | `#24343C` | A step only. Contrast against the page is about 1.24:1, so a meaningful edge needs an ivory or stone border. |
-| Action | `#17675E` with ivory text | Teal type on ink fails at 2.39:1. Do not recolour links teal in the dark scheme. Use ivory links with an underline. |
-| Focus | `#F7F4EE` | Not gold, not teal, on an ink page |
+| Page | `#1C1410` | Deep brown |
+| Text | `#F4EDE3` | Parchment, about 15.6:1 |
+| Secondary text | `#D9CBBA` | About 11.4:1 on the dark page |
+| Panel | `#2C211A` | A step only, so panels keep a line border |
+| Action | `#F4EDE3` with seal-brown text | A brown button on this page would fall under 3:1. Links stay parchment and underlined |
+| Focus | `#F4EDE3` | Not gold |
 
 Colour roles in this section still apply. Spacing, type steps, radii, and shadows are specified in `docs/DESIGN_SYSTEM.md`.
 
@@ -179,7 +181,7 @@ Do not add a display face in the first implementation. A second paid Ethiopic fa
 
 | Use | Specification |
 | --- | --- |
-| Wordmark | "TIBEB" in Noto Sans, weight 600, Latin capitals, tracking `0.04em`. "Consultancy" on the next line or beside it, weight 500, sentence case, smaller. |
+| Wordmark | "TIBEB" in Noto Sans, weight 600, Latin capitals, tracking `0.14em`, with a gold hairline under the word. "Consultancy" on the next line, weight 500, sentence case, smaller. |
 | Page title | Existing `text-title` / `text-title-lg`. One `h1`. |
 | Body | Existing `text-body`, line height 1.75, measure no wider than `max-width-content` (48rem). |
 | Meta and labels | Existing `text-meta`. |
@@ -197,7 +199,7 @@ Approved direction for the later logo:
 - A wordmark, not a crest.
 - Clear space equal to the height of the "T" on all sides.
 - Minimum size: the word "TIBEB" no smaller than 16px on screen.
-- On ivory, the wordmark is ink. On ink, it is ivory. On teal, it is ivory.
+- On parchment, the wordmark is seal brown. On the dark page, it is parchment. On the seal control, it is parchment.
 - Gold may underline the wordmark only after a designer checks that the link or control does not depend on that line.
 - No flag, lion, cross, globe, or generic "T" monogram in the approved mark. The current T icon should be retired when the wordmark ships, not redrawn as a luxury monogram.
 - Do not stretch, outline, or set the wordmark in a script face.

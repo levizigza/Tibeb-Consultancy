@@ -39,7 +39,7 @@ No third-party script is loaded. There is no content photograph. The only image 
 
 ## Accessibility review
 
-Checked against WCAG 2.2 AA. Automated contrast tests cover text, muted text on panels, links, button labels, focus, and borders in both colour schemes. Gold remains ornament only.
+Checked against WCAG 2.2 AA. Automated contrast tests cover text, muted text on panels, links, button labels, focus, and borders in both colour schemes. Gold remains a hairline beside the brown rule, not text on the parchment page.
 
 | Area | Result |
 | --- | --- |
