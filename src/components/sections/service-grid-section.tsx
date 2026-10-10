@@ -32,7 +32,7 @@ export function ServiceGridSection({
         </div>
         <ul className="mt-xl grid grid-cols-1 gap-lg md:grid-cols-2">
           {items.map((item) => (
-            <li key={item.href} className="rounded-lg border border-line bg-surface p-lg shadow-rest">
+            <li key={item.href} className="rounded-lg border border-line bg-surface p-lg shadow-rest" data-motion="rise">
               <h3 className="text-heading-sm font-semibold">
                 <Link href={item.href} className="underline decoration-link/40 underline-offset-4">
                   {item.title}

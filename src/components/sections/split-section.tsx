@@ -30,9 +30,10 @@ export function SplitSection({
             height={800}
             sizes="(min-width: 48rem) 50vw, 100vw"
             className="aspect-[3/2] w-full rounded-lg border border-line object-cover"
+            data-motion="rise"
           />
         ) : (
-          <div className="flex min-h-48 items-end rounded-lg border border-line bg-surface p-lg">
+          <div className="flex min-h-48 items-end rounded-lg border border-line bg-surface p-lg" data-motion="rise">
             <p className="text-meta text-muted">No photograph has been supplied.</p>
           </div>
         )}

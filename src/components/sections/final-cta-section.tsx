@@ -20,7 +20,7 @@ export function FinalCtaSection({
             {title}
           </h2>
           <p className="mt-4 text-body">{text}</p>
-          <div className="mt-xl">
+          <div className="mt-xl" data-motion="enter">
             <ButtonLink href={action.href}>{action.label}</ButtonLink>
           </div>
         </div>

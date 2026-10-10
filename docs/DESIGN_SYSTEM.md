@@ -87,6 +87,8 @@ Motion is 150ms and 250ms, with the standard ease. `prefers-reduced-motion: redu
 
 The first visit in a session opens on a seal-brown curtain. The wordmark settles, the gold line draws, and the curtain rises. Skip and Escape close it. A return visit in the same session, and anyone who asks for reduced motion, sees the page directly.
 
+After that, motion and stillness alternate. The homepage title, the hairline under it, service cards, process numbers, the photograph frame, and the closing button rise or draw when they enter the screen. Headings, body copy, the header, the footer, and the question list stay still. Reduced motion leaves every one of those still.
+
 ## Components
 
 | Component | Variants and states |

@@ -4,6 +4,8 @@ The shell uses the Clear ground tokens in `docs/DESIGN_SYSTEM.md` and the routes
 
 No photograph, founder, or client quotation is invented. A split section without a supplied image shows the sentence "No photograph has been supplied."
 
+Motion is mixed with stillness. The title, the hairline, cards, step numbers, the photograph frame, and the closing button move once as they enter. Reading sections, the header, and the footer do not. `prefers-reduced-motion: reduce` keeps the whole page still.
+
 ## Breakpoints
 
 | Width | Navigation | Section layout |
