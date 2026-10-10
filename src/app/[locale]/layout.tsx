@@ -5,6 +5,7 @@ import { notoSansEthiopic } from "@/app/fonts";
 import { BreadcrumbNav } from "@/components/layout/breadcrumb-nav";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { SiteShell } from "@/components/layout/site-shell";
 import { TranslationFallback } from "@/components/layout/translation-fallback";
 import { documentLanguage } from "@/i18n/document-language";
 import { locales } from "@/i18n/locales";
@@ -40,13 +41,15 @@ export default async function LocaleLayout({
         .filter(Boolean)
         .join(" ")}
     >
-      <SiteHeader locale={locale} />
-      <main id="main" tabIndex={-1} className="flex-1">
-        <TranslationFallback locale={locale} />
-        <BreadcrumbNav locale={locale} origin={publicSiteOrigin()} />
-        {children}
-      </main>
-      <SiteFooter locale={locale} />
+      <SiteShell locale={locale}>
+        <SiteHeader locale={locale} />
+        <main id="main" tabIndex={-1} className="flex-1">
+          <TranslationFallback locale={locale} />
+          <BreadcrumbNav locale={locale} origin={publicSiteOrigin()} />
+          {children}
+        </main>
+        <SiteFooter locale={locale} />
+      </SiteShell>
     </div>
   );
 }

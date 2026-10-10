@@ -23,7 +23,11 @@ export function HeroSection({
       <div className="mx-auto w-full max-w-page px-gutter sm:px-gutter-lg">
         <div className="max-w-content">
           {eyebrow ? <p className="text-meta font-medium text-muted">{eyebrow}</p> : null}
-          <h1 className="mt-3 text-title font-semibold tracking-tight">{title}</h1>
+          <h1 className="mt-4 text-display font-semibold tracking-tight">{title}</h1>
+          <div className="mt-6 flex w-16 flex-col gap-1" aria-hidden="true">
+            <span className="h-px bg-line" />
+            <span className="h-px bg-ornament" />
+          </div>
           <p className="mt-lg text-body-lg">{lede}</p>
           {actions.length > 0 ? (
             <div className="mt-xl flex flex-col gap-3 sm:flex-row sm:flex-wrap">

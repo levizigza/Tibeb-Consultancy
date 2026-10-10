@@ -1,6 +1,6 @@
 # Brand strategy
 
-Status: Direction A (Clear ground) is the live design system. Logo, name meaning, Ge'ez spelling, founder facts, and voice samples in the checklist are still open. Do not add those until the matching row is approved.
+Status: Direction A (Clear ground) is the live design system. The owner requested a Latin wordmark on 10 October 2026. Name meaning, Ge'ez spelling, founder facts, and voice samples in the checklist are still open. Do not add those until the matching row is approved.
 
 This strategy is for a later implementation pass. It does not publish a new logo, a founder story, or a claim that the name has been explained.
 
@@ -181,7 +181,7 @@ Do not add a display face in the first implementation. A second paid Ethiopic fa
 
 | Use | Specification |
 | --- | --- |
-| Wordmark | "TIBEB" in Noto Sans, weight 600, Latin capitals, tracking `0.14em`, with a gold hairline under the word. "Consultancy" on the next line, weight 500, sentence case, smaller. |
+| Wordmark | Outlined Noto Sans. "TIBEB" in SemiBold capitals. A gold hairline. "CONSULTANCY" in Medium, tracked to the same width. |
 | Page title | Existing `text-title` / `text-title-lg`. One `h1`. |
 | Body | Existing `text-body`, line height 1.75, measure no wider than `max-width-content` (48rem). |
 | Meta and labels | Existing `text-meta`. |
@@ -192,16 +192,18 @@ The Ge'ez spelling is not part of the wordmark until the owner confirms the lett
 
 ## 8. Logo, icon, pattern
 
-The file `src/app/icon.svg` is a provisional mark. Leave it until the checklist is signed.
+The owner asked on 10 October 2026 for a branded logo. The mark that shipped is a Latin wordmark: TIBEB in Noto Sans SemiBold, a gold hairline, and CONSULTANCY tracked to the same width. It is drawn as letter outlines so the header does not depend on a live font. Ge'ez spelling is still unconfirmed, so it is not in the lockup. There is no crest, flag, or monogram.
 
-Approved direction for the later logo:
+The browser icon is the same word, TIBEB, with the gold hairline on a seal square. The earlier single-letter tile is retired.
+
+Approved direction for the logo:
 
 - A wordmark, not a crest.
 - Clear space equal to the height of the "T" on all sides.
 - Minimum size: the word "TIBEB" no smaller than 16px on screen.
 - On parchment, the wordmark is seal brown. On the dark page, it is parchment. On the seal control, it is parchment.
 - Gold may underline the wordmark only after a designer checks that the link or control does not depend on that line.
-- No flag, lion, cross, globe, or generic "T" monogram in the approved mark. The current T icon should be retired when the wordmark ships, not redrawn as a luxury monogram.
+- No flag, lion, cross, globe, or generic "T" monogram. The browser icon is the word TIBEB, not a monogram.
 - Do not stretch, outline, or set the wordmark in a script face.
 
 Iconography for the interface: 24px line icons, 1.5px stroke, `currentColor`, rounded caps. Use them for navigation and status, with a visible name. Do not commission a set of cultural pictograms.
@@ -278,7 +280,7 @@ Implementation waits until these are decided. "Not approved" is a complete answe
 | Ge'ez spelling | Confirm letters or decline a Ge'ez lockup | Latin wordmark only, after the rest of this list |
 | Palette | Accept the token table, or mark swatches to change | No hex values copied into components |
 | Gold | Accept gold as ornament only, or drop it | Do not use it for text, links, or focus |
-| Logo | Approve a wordmark file | Keep `src/app/icon.svg` |
+| Logo | Confirm this Latin wordmark, or replace the file | The 10 October 2026 wordmark is in the header and the browser icon |
 | Founder | Provide facts and an optional photo, or decline a founder block | No biography and no portrait |
 | Languages | Confirm website languages separately from consultation languages | Keep the current locale notices |
 | Voice samples | Approve or rewrite the draft lines in section 10 | Do not paste them onto the site |

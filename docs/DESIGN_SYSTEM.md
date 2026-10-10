@@ -1,6 +1,6 @@
 # Design system
 
-This is the Clear ground interface kit. It uses the colour roles from `docs/BRAND_STRATEGY.md`. Logo, name meaning, Ge'ez spelling, founder facts, and photographs stay out until those checklist rows are approved.
+This is the Clear ground interface kit. It uses the colour roles from `docs/BRAND_STRATEGY.md`. The Latin wordmark is in the header. Name meaning, Ge'ez spelling, founder facts, and photographs stay out until those checklist rows are approved.
 
 Tokens live in `src/app/globals.css`. Components live in `src/components/ui`. The development preview is `/development/design-system`.
 
@@ -38,8 +38,9 @@ There is no display face.
 | Small heading | 1.125rem to 1.25rem | 1.35 |
 | Heading | 1.375rem to 1.75rem | 1.25 |
 | Title | 1.75rem to 2.25rem | 1.15 |
+| Display | 2.25rem to 4.25rem | 1.08 |
 
-The title and headings use `clamp`, so the scale grows with the viewport without a second font. The wordmark is the public name: the first word at weight 600 and `0.04em` tracking, the rest at weight 500. No Ge'ez lockup.
+The title and headings use `clamp`, so the scale grows with the viewport without a second font. Display is the homepage title only. The wordmark is outlined Noto Sans: TIBEB, a gold hairline, and CONSULTANCY on one measure. No Ge'ez lockup.
 
 Reading text stays inside `max-w-content` (48rem).
 
@@ -83,6 +84,8 @@ Layout is written for a narrow viewport first.
 | Raised shadow | 8px offset, 16px blur, 8% ink |
 
 Motion is 150ms and 250ms, with the standard ease. `prefers-reduced-motion: reduce` sets both durations to 0ms and stops transitions and animations. The question panel fade runs only when motion is allowed. Public questions are written in the page, so the answer is available without opening a control.
+
+The first visit in a session opens on a seal-brown curtain. The wordmark settles, the gold line draws, and the curtain rises. Skip and Escape close it. A return visit in the same session, and anyone who asks for reduced motion, sees the page directly.
 
 ## Components
 
