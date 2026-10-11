@@ -1,4 +1,3 @@
-import { FileMark } from "@/components/brand/file-mark";
 import { MaterialFrame } from "@/components/sections/material-frame";
 import { ButtonLink } from "@/components/ui/button";
 import { rhythm } from "@/components/sections/rhythm";
@@ -14,11 +13,15 @@ export function HeroSection({
   eyebrow,
   title,
   lede,
+  notice,
+  limit,
   actions = [],
 }: {
   eyebrow?: string;
   title: string;
   lede: string;
+  notice?: string;
+  limit?: string;
   actions?: HeroAction[];
 }) {
   return (
@@ -26,14 +29,15 @@ export function HeroSection({
       <div className="mx-auto grid w-full max-w-page grid-cols-1 items-start gap-xl px-gutter sm:px-gutter-lg lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
         <div className="max-w-content">
           {eyebrow ? <p className="text-meta font-medium text-muted">{eyebrow}</p> : null}
-          <div className="mt-4 flex items-start gap-4">
-            <FileMark className="mt-1 h-16 w-12 sm:h-20 sm:w-14" />
-            <h1 className="min-w-0 text-display font-semibold tracking-tight" data-motion="enter">
-              {title}
-            </h1>
-          </div>
+          <h1 className="text-display font-semibold tracking-tight" data-motion="enter">
+            {title}
+          </h1>
           <div className="regal-band mt-6 w-40 max-w-full" aria-hidden="true" data-motion="draw" />
           <p className="mt-lg text-body-lg">{lede}</p>
+          {notice ? <p className="mt-4 text-meta text-muted">{notice}</p> : null}
+          {limit ? (
+            <p className="mt-lg border border-line bg-notice-surface p-lg text-body">{limit}</p>
+          ) : null}
           {actions.length > 0 ? (
             <div className="mt-xl flex flex-col gap-3 sm:flex-row sm:flex-wrap" data-motion="fade">
               {actions.map((action) => (

@@ -11,6 +11,7 @@ import { ServiceGridSection } from "@/components/sections/service-grid-section";
 import { StillRow } from "@/components/sections/still-row";
 import { InlineLink } from "@/components/ui/link";
 import { businessProfile } from "@/content/business/profile";
+import { previewCopy } from "@/content/translations/preview";
 import {
   getPublicConsultationLanguages,
   getPublicCredentials,
@@ -55,7 +56,9 @@ async function HomeContent({ params }: { params: Promise<{ locale: string }> }) 
     <>
       <HeroSection
         title={homePage.title}
-        lede={homePage.heroLede}
+        lede={businessProfile.positioning.text}
+        notice={homePage.aboutDraftNote}
+        limit={previewCopy.statusBody}
         actions={[
           {
             href: replaceLocaleInPath(homePage.contactPath, locale),
@@ -110,6 +113,7 @@ async function HomeContent({ params }: { params: Promise<{ locale: string }> }) 
             </dd>
           </div>
         </dl>
+        <p>{homePage.supportBody}</p>
       </QuietEditorialSection>
 
       <ServiceGridSection
@@ -135,13 +139,11 @@ async function HomeContent({ params }: { params: Promise<{ locale: string }> }) 
       <StillRow locale={locale} />
 
       <QuietEditorialSection id="about" title={homePage.aboutTitle}>
-        <h3 className="text-body font-semibold">{homePage.aboutDraftLabel}</h3>
+        <h3 className="text-heading-sm font-semibold">{homePage.aboutDraftLabel}</h3>
         <p>{businessProfile.positioning.text}</p>
         <p className="text-meta text-muted">{homePage.aboutDraftNote}</p>
         <p>{homePage.aboutFounder}</p>
-      </QuietEditorialSection>
-
-      <QuietEditorialSection id="evidence" title={homePage.evidenceTitle}>
+        <h3 className="text-heading-sm font-semibold">{homePage.evidenceTitle}</h3>
         {testimonials.length === 0 ? <p>{homePage.evidenceEmpty}</p> : null}
         {testimonials.map((item) => (
           <figure key={item.id} className="border-l-4 border-foreground pl-4">
@@ -149,13 +151,9 @@ async function HomeContent({ params }: { params: Promise<{ locale: string }> }) 
             <figcaption className="mt-2 text-meta text-muted">{item.attribution}</figcaption>
           </figure>
         ))}
-      </QuietEditorialSection>
-
-      <QuietEditorialSection id="language-support" title={homePage.supportTitle}>
-        {consultationLanguages.length === 0 ? (
-          <p>{homePage.supportBody}</p>
-        ) : (
+        {consultationLanguages.length > 0 ? (
           <>
+            <h3 className="text-heading-sm font-semibold">{homePage.supportTitle}</h3>
             <p>{homePage.supportListLead}</p>
             <ul className="flex flex-col gap-2">
               {consultationLanguages.map((item) => (
@@ -163,7 +161,7 @@ async function HomeContent({ params }: { params: Promise<{ locale: string }> }) 
               ))}
             </ul>
           </>
-        )}
+        ) : null}
       </QuietEditorialSection>
 
       <FaqSection

@@ -154,6 +154,14 @@ body > * {
   outline-offset: 3px;
 }
 
+a[aria-current="page"],
+a[aria-current="true"] {
+  font-weight: 600;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.35rem;
+}
+
 .focus-target:focus {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
@@ -341,7 +349,7 @@ html[data-opening="skip"] .opening-sequence {
 .process-rail {
   background-image: linear-gradient(var(--foreground), var(--foreground));
   background-repeat: no-repeat;
-  background-position: 1.2rem 0;
+  background-position: calc(1.25rem - 1px) 0;
   background-size: 2px 100%;
 }
 

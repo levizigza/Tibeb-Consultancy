@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/layout/page-header";
 import { GuideIndex } from "@/components/resources/guide-index";
 import { FramedStill } from "@/components/sections/material-frame";
+import { QuietEditorialSection } from "@/components/sections/quiet-editorial-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { guidePresentations } from "@/content/resources/publication";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
@@ -67,14 +68,16 @@ async function ResourcesContent({
         items={items}
         empty="Questions, articles, and links stay off this page until they are approved."
       />
-      <p className="mx-auto w-full max-w-page px-gutter pb-xl sm:px-gutter-lg">
-        <TextLink href="/development" locale={locale}>
-          Development documentation
-        </TextLink>
-      </p>
+      <QuietEditorialSection id="development-notes" title="Notes on this preview">
+        <p>
+          <TextLink href="/development" locale={locale}>
+            Development documentation
+          </TextLink>
+        </p>
+      </QuietEditorialSection>
       <FinalCtaSection
         id="resources-next"
-        title="How the map is meant to be read"
+        title="How it works"
         text="The next page explains the stages. It does not open a file."
         action={{
           href: replaceLocaleInPath(scaffoldCopy.primaryCta.path, locale),

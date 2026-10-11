@@ -1,6 +1,5 @@
 import { businessProfile } from "@/content/business/profile";
 import { scaffoldCopy } from "@/content/site/scaffold-copy";
-import { illustrativeNotice } from "@/content/site/work-stills";
 import { previewCopy } from "@/content/translations/preview";
 
 /**
@@ -23,7 +22,7 @@ export const homePage = {
   governmentValue:
     "No statement about a government relationship has been approved. This page does not present the business as a government channel.",
   servicesTitle: "Services",
-  servicesIntro: `${scaffoldCopy.servicesMessage} ${previewCopy.publishedServicesEmpty} ${illustrativeNotice}`,
+  servicesIntro: `${scaffoldCopy.servicesMessage} ${previewCopy.publishedServicesEmpty}`,
   closedStatus: "Not approved",
   howTitle: "How it works",
   howIntro:

@@ -20,7 +20,7 @@ export function FaqAccordion({ items }: { items: readonly FaqItem[] }) {
 
         return (
           <div key={item.id} className="border-b border-line">
-            <h3 className="text-body font-semibold">
+            <h3 className="text-heading-sm font-semibold">
               <button
                 id={buttonId}
                 type="button"

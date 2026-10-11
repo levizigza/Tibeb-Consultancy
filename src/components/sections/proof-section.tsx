@@ -1,4 +1,5 @@
 import { rhythm } from "@/components/sections/rhythm";
+import { Badge } from "@/components/ui/badge";
 
 export function ProofSection({
   id,
@@ -22,7 +23,9 @@ export function ProofSection({
             {items.map((item) => (
               <div key={item.label} className="border-t border-line pt-3">
                 <dt className="text-meta text-muted">{item.label}</dt>
-                <dd className="mt-1 text-body font-medium">{item.value}</dd>
+                <dd className="mt-2">
+                  <Badge>{item.value}</Badge>
+                </dd>
               </div>
             ))}
           </dl>

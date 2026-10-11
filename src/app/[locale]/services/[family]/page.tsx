@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/layout/page-header";
 import { MaterialFrame } from "@/components/sections/material-frame";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { QuietEditorialSection } from "@/components/sections/quiet-editorial-section";
+import { Badge } from "@/components/ui/badge";
 import { InlineLink } from "@/components/ui/link";
 import { complianceRecords } from "@/content/compliance/records";
 import { isPaidServiceBookable } from "@/content/compliance/safeguards";
@@ -85,16 +86,14 @@ async function ServiceFamilyContent({
               >
                 {service.label}
               </InlineLink>
-              <span className="max-w-full text-meta text-muted">
-                {bookableIds.has(service.id) ? "Gate open, no request flow" : "Not approved"}
-              </span>
+              <Badge>{bookableIds.has(service.id) ? "Gate open, no request flow" : "Not approved"}</Badge>
             </li>
           ))}
         </ul>
       </QuietEditorialSection>
       <FinalCtaSection
         id="family-next"
-        title="How the map is meant to be read"
+        title="How it works"
         text="The next page explains the steps. It does not open a file."
         action={{
           href: replaceLocaleInPath(scaffoldCopy.primaryCta.path, locale),

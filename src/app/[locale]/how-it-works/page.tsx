@@ -68,16 +68,18 @@ async function HowItWorksContent({
       />
       <QuietEditorialSection id="how-related" title={clientProcess.relatedTitle}>
         <p>{clientProcess.relatedBody}</p>
-        <p>
-          <TextLink href="/pricing" locale={locale}>
-            Pricing
-          </TextLink>
-        </p>
-        <p>
-          <TextLink href="/resources" locale={locale}>
-            Questions
-          </TextLink>
-        </p>
+        <ul className="flex flex-col gap-2">
+          <li>
+            <TextLink href="/pricing" locale={locale}>
+              Pricing
+            </TextLink>
+          </li>
+          <li>
+            <TextLink href="/resources" locale={locale}>
+              Questions
+            </TextLink>
+          </li>
+        </ul>
       </QuietEditorialSection>
       <FinalCtaSection
         id="how-next"

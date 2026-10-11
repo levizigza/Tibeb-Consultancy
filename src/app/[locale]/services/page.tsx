@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/layout/page-header";
 import { ServiceFinder } from "@/components/service-finder/service-finder";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { ServiceGridSection } from "@/components/sections/service-grid-section";
+import { Badge } from "@/components/ui/badge";
 import { InlineLink } from "@/components/ui/link";
 import { finderIntents } from "@/content/site/service-finder";
 import { publishedLinksForIntent } from "@/lib/service-finder/match";
@@ -60,7 +61,7 @@ async function ServicesContent({
       />
       <ServiceGridSection
         id="service-groups"
-        title="Groups"
+        title="Service groups"
         intro="Open a group to see the names inside it. Each name is closed."
         items={serviceFamilies.map((family) => ({
           href: replaceLocaleInPath(family.path, locale),
@@ -78,9 +79,7 @@ async function ServicesContent({
                   >
                     {service.label}
                   </InlineLink>
-                  <span className="max-w-full text-meta text-muted">
-                    {bookableIds.has(service.id) ? "Gate open, no request flow" : "Not approved"}
-                  </span>
+                  <Badge>{bookableIds.has(service.id) ? "Gate open, no request flow" : "Not approved"}</Badge>
                 </li>
               ))}
             </ul>
@@ -89,7 +88,7 @@ async function ServicesContent({
       />
       <FinalCtaSection
         id="services-next"
-        title="How the map is meant to be read"
+        title="How it works"
         text="The next page explains the steps. It does not open a file."
         action={{
           href: replaceLocaleInPath(scaffoldCopy.primaryCta.path, locale),

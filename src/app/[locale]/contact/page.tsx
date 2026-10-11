@@ -74,7 +74,7 @@ async function ContactContent({
       </section>
       <FinalCtaSection
         id="contact-next"
-        title="How the map is meant to be read"
+        title="This form does not start a file"
         text="The inquiry form does not start the stages on the next page."
         action={{
           href: replaceLocaleInPath(scaffoldCopy.primaryCta.path, locale),

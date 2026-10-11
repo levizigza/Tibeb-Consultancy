@@ -16,7 +16,7 @@ export function StillRow({ locale }: { locale: LocaleCode }) {
     <section aria-labelledby="illustrative-stills" className={`${rhythm.grid} border-t border-line`}>
       <div className="mx-auto w-full max-w-page px-gutter sm:px-gutter-lg">
         <h2 id="illustrative-stills" className="text-heading font-semibold" data-motion="enter">
-          Illustrative stills
+          Read next
         </h2>
         <SectionRule />
         <p className="mt-4 max-w-content text-body" data-motion="fade">

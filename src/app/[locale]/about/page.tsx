@@ -6,7 +6,6 @@ import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { ProofSection } from "@/components/sections/proof-section";
 import { QuietEditorialSection } from "@/components/sections/quiet-editorial-section";
 import { FramedStill } from "@/components/sections/material-frame";
-import { SplitSection } from "@/components/sections/split-section";
 import { businessProfile } from "@/content/business/profile";
 import { staticPages } from "@/content/site/information-architecture";
 import { scaffoldCopy } from "@/content/site/scaffold-copy";
@@ -51,9 +50,6 @@ async function AboutContent({
           This sentence is a development draft. It is not an approved public claim.
         </p>
       </QuietEditorialSection>
-      <SplitSection id="about-picture" title="Photograph">
-        <p>No founder name, photograph, credential, or history is approved for this page.</p>
-      </SplitSection>
       <ProofSection
         id="about-proof"
         title="What can be shown"

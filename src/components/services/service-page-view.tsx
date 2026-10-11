@@ -5,6 +5,7 @@ import { FaqSection } from "@/components/sections/faq-section";
 import { ProcessSection } from "@/components/sections/process-section";
 import { QuietEditorialSection } from "@/components/sections/quiet-editorial-section";
 import { PageHeader } from "@/components/layout/page-header";
+import { Badge } from "@/components/ui/badge";
 import { TextLink } from "@/components/ui/text-link";
 import { linkClassName } from "@/components/ui/link";
 import type { ServicePageModel } from "@/content/services/page-model";
@@ -73,7 +74,7 @@ function RelatedList({
             <Link href={item.href} className={linkClassName}>
               {item.title}
             </Link>
-            <span className="max-w-full text-meta text-muted">{item.status}</span>
+            <Badge>{item.status}</Badge>
           </li>
         ))}
       </ul>
@@ -115,9 +116,9 @@ export function ServicePageView({ model, locale }: { model: ServicePageModel; lo
         <BulletList items={page.deliverables} />
       </QuietEditorialSection>
       <QuietEditorialSection id="service-scope" title="Scope">
-        <h3 className="text-body font-semibold">Included</h3>
+        <h3 className="text-heading-sm font-semibold">Included</h3>
         <BulletList items={page.inclusions} />
-        <h3 className="text-body font-semibold">Not included</h3>
+        <h3 className="text-heading-sm font-semibold">Not included</h3>
         <BulletList items={page.exclusions} />
       </QuietEditorialSection>
       <QuietEditorialSection id="service-information" title="Information needed">
@@ -128,7 +129,7 @@ export function ServicePageView({ model, locale }: { model: ServicePageModel; lo
         <p>{page.priceNote}</p>
         {page.turnaround ? (
           <>
-            <h3 className="text-body font-semibold">Turnaround</h3>
+            <h3 className="text-heading-sm font-semibold">Turnaround</h3>
             <p>{page.turnaround}</p>
           </>
         ) : (

@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/layout/page-header";
 import { PriceStatusList } from "@/components/pricing/price-status-list";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { QuietEditorialSection } from "@/components/sections/quiet-editorial-section";
+import { SectionRule } from "@/components/sections/section-rule";
 import { rhythm } from "@/components/sections/rhythm";
 import { TextLink } from "@/components/ui/text-link";
 import { getPublicPricePresentations, pricingPage } from "@/content/services/price-presentation";
@@ -40,6 +41,7 @@ async function PricingContent({ params }: { params: Promise<{ locale: string }> 
           <h2 id="fee-information" className="text-heading font-semibold">
             Fee information
           </h2>
+          <SectionRule />
           <p className="mt-4 max-w-content text-body">{pricingPage.governmentFee}</p>
           <div className="mt-xl">
             <PriceStatusList items={prices} />
@@ -47,21 +49,23 @@ async function PricingContent({ params }: { params: Promise<{ locale: string }> 
         </div>
       </section>
       <QuietEditorialSection id="pricing-related" title="Related pages">
-        <p>
-          <TextLink href="/how-it-works" locale={locale}>
-            How it works
-          </TextLink>
-        </p>
-        <p>
-          <TextLink href="/resources" locale={locale}>
-            Questions
-          </TextLink>
-        </p>
-        <p>
-          <TextLink href="/services" locale={locale}>
-            Services
-          </TextLink>
-        </p>
+        <ul className="flex flex-col gap-2">
+          <li>
+            <TextLink href="/how-it-works" locale={locale}>
+              How it works
+            </TextLink>
+          </li>
+          <li>
+            <TextLink href="/resources" locale={locale}>
+              Questions
+            </TextLink>
+          </li>
+          <li>
+            <TextLink href="/services" locale={locale}>
+              Services
+            </TextLink>
+          </li>
+        </ul>
       </QuietEditorialSection>
       <FinalCtaSection
         id="pricing-contact"

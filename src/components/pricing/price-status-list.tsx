@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import type { PublicPricePresentation } from "@/content/services/price-presentation";
 import { pricingPage } from "@/content/services/price-presentation";
 
@@ -88,7 +89,9 @@ export function PriceStatusList({ items }: { items: readonly PublicPricePresenta
         {pricingPage.rows.map((row) => (
           <div key={row.id} className="border-t border-line pt-3" data-motion="fade">
             <dt className="text-meta text-muted">{row.label}</dt>
-            <dd className="mt-1 font-medium">{row.status}</dd>
+            <dd className="mt-2">
+              <Badge>{row.status}</Badge>
+            </dd>
           </div>
         ))}
       </dl>

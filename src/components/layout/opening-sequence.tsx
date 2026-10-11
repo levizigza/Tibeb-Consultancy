@@ -34,9 +34,8 @@ export function OpeningSequence({
 
   useEffect(() => {
     if (document.documentElement.dataset.opening === "skip") {
-      setVisible(false);
-      onCoveredChange(false);
-      return;
+      const frame = window.requestAnimationFrame(() => onCoveredChange(false));
+      return () => window.cancelAnimationFrame(frame);
     }
 
     rememberOpening();

@@ -148,20 +148,24 @@ export function SiteNavigation({ locale, pathname }: { locale: LocaleCode; pathn
                 className="absolute top-full left-0 z-10 max-h-[min(24rem,70dvh)] w-72 overflow-y-auto rounded-md border border-line bg-background p-2 shadow-rest"
                 onKeyDown={(event) => move("services", event.key)}
               >
-                {serviceFamilies.map((family, index) => (
-                  <li key={family.id}>
-                    <Link
-                      ref={(node) => {
-                        servicesRef.current[index] = node;
-                      }}
-                      href={replaceLocaleInPath(family.path, locale)}
-                      className="flex min-h-11 items-center rounded-sm px-3 font-medium hover:bg-surface"
-                      onClick={() => dispatch({ type: "close" })}
-                    >
-                      {family.label}
-                    </Link>
-                  </li>
-                ))}
+                {serviceFamilies.map((family, index) => {
+                  const href = replaceLocaleInPath(family.path, locale);
+                  return (
+                    <li key={family.id}>
+                      <Link
+                        ref={(node) => {
+                          servicesRef.current[index] = node;
+                        }}
+                        href={href}
+                        aria-current={currentState(pathname, href, family.path)}
+                        className="flex min-h-11 items-center rounded-sm px-3 font-medium hover:bg-surface"
+                        onClick={() => dispatch({ type: "close" })}
+                      >
+                        {family.label}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </li>
             {desktopLinks
@@ -264,17 +268,21 @@ export function SiteNavigation({ locale, pathname }: { locale: LocaleCode; pathn
                 </Link>
                 {item.id === "services" ? (
                   <ul className="mb-2 ml-4 border-l border-line pl-3">
-                    {serviceFamilies.map((family) => (
-                      <li key={family.id}>
-                        <Link
-                          href={replaceLocaleInPath(family.path, locale)}
-                          className={mobileLinkClass}
-                          onClick={() => dispatch({ type: "close" })}
-                        >
-                          {family.label}
-                        </Link>
-                      </li>
-                    ))}
+                    {serviceFamilies.map((family) => {
+                      const href = replaceLocaleInPath(family.path, locale);
+                      return (
+                        <li key={family.id}>
+                          <Link
+                            href={href}
+                            aria-current={currentState(pathname, href, family.path)}
+                            className={mobileLinkClass}
+                            onClick={() => dispatch({ type: "close" })}
+                          >
+                            {family.label}
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 ) : null}
               </li>

@@ -40,7 +40,7 @@ export function FaqSection({
             <div className="flex max-w-content flex-col">
               {items.map((item) => (
                 <article key={item.id} aria-labelledby={`${id}-${item.id}`} className="border-t border-line py-lg" data-motion="fade">
-                  <h3 id={`${id}-${item.id}`} className="text-body font-semibold">
+                  <h3 id={`${id}-${item.id}`} className="text-heading-sm font-semibold">
                     {item.question}
                   </h3>
                   <p className="mt-3 text-body">{item.answer}</p>

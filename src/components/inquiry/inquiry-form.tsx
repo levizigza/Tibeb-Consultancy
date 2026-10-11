@@ -63,7 +63,7 @@ export function InquiryForm({
   return (
     <form
       action={formAction}
-      className="flex w-full min-w-0 max-w-content flex-col gap-6"
+      className="relative flex w-full min-w-0 max-w-content flex-col gap-6"
       lang="en"
       noValidate
       onSubmit={(event) => {
@@ -169,7 +169,7 @@ export function InquiryForm({
         <FieldError id={`${fieldId.privacyAcknowledgement}-error`} message={errorFor("privacyAcknowledgement")} />
       </div>
 
-      <div className="absolute h-px w-px overflow-hidden opacity-0 [contain:strict]" aria-hidden="true">
+      <div className="pointer-events-none absolute h-px w-px overflow-hidden opacity-0 [contain:strict]" aria-hidden="true">
         <label htmlFor="companyWebsite">Company website</label>
         <input id="companyWebsite" name="companyWebsite" type="text" tabIndex={-1} autoComplete="off" defaultValue="" />
       </div>

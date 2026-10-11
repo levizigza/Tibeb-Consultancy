@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { SectionRule } from "@/components/sections/section-rule";
+import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { rhythm } from "@/components/sections/rhythm";
@@ -44,8 +45,8 @@ export function ServiceGridSection({
           {items.map((item) => (
             <li key={item.href} className="overflow-hidden rounded-lg border border-line bg-surface shadow-rest" data-motion="rise">
               <div className="regal-band" aria-hidden="true" />
-              {item.image ? (
-                <figure>
+              <figure>
+                {item.image ? (
                   <div className="overflow-hidden">
                     <Image
                       src={item.image.src}
@@ -57,19 +58,23 @@ export function ServiceGridSection({
                       data-motion="drift"
                     />
                   </div>
-                  <figcaption className="px-lg pt-3 text-meta text-muted">{item.image.caption}</figcaption>
-                </figure>
-              ) : null}
-              <div className="p-lg">
-              <h3 className="text-heading-sm font-semibold">
-                <Link href={item.href} className="underline decoration-link/40 underline-offset-4">
-                  {item.title}
-                </Link>
-              </h3>
-              <p className="mt-3 text-body text-muted">{item.detail}</p>
-              <p className="mt-4 text-meta font-medium">{item.status}</p>
-              {item.children}
-              </div>
+                ) : null}
+                <div className="p-lg">
+                  <h3 className="text-heading-sm font-semibold">
+                    <Link href={item.href} className="underline decoration-link/40 underline-offset-4">
+                      {item.title}
+                    </Link>
+                  </h3>
+                  <p className="mt-3 text-body text-muted">{item.detail}</p>
+                  <p className="mt-4">
+                    <Badge>{item.status}</Badge>
+                  </p>
+                  {item.children}
+                </div>
+                {item.image ? (
+                  <figcaption className="px-lg pb-lg text-meta text-muted">{item.image.caption}</figcaption>
+                ) : null}
+              </figure>
             </li>
           ))}
         </ul>

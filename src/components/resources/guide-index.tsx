@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { SectionRule } from "@/components/sections/section-rule";
+import { Badge } from "@/components/ui/badge";
 import { TextLink } from "@/components/ui/text-link";
 import { rhythm } from "@/components/sections/rhythm";
 import { resourceCategories } from "@/content/resources/categories";
@@ -67,7 +68,9 @@ function GuideList({ guides, locale }: { guides: readonly GuidePresentation[]; l
           </h4>
           <p className="mt-2 text-meta text-muted">{guide.categoryLabel}</p>
           <p className="mt-3 text-body">{guide.summary}</p>
-          <p className="mt-3 text-meta font-medium">{guide.published ? messages.statusPublished : messages.statusNotPublished}</p>
+          <p className="mt-3">
+            <Badge>{guide.published ? messages.statusPublished : messages.statusNotPublished}</Badge>
+          </p>
         </li>
       ))}
     </ul>

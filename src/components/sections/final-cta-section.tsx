@@ -28,7 +28,7 @@ export function FinalCtaSection({
           </div>
         </div>
       </div>
-      <div className="regal-band" aria-hidden="true" />
+      <div className="regal-band" aria-hidden="true" data-motion="draw" />
     </section>
   );
 }
