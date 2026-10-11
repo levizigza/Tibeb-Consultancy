@@ -8,6 +8,7 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { ProcessSection } from "@/components/sections/process-section";
 import { QuietEditorialSection } from "@/components/sections/quiet-editorial-section";
 import { ServiceGridSection } from "@/components/sections/service-grid-section";
+import { StillRow } from "@/components/sections/still-row";
 import { InlineLink } from "@/components/ui/link";
 import { businessProfile } from "@/content/business/profile";
 import {
@@ -130,6 +131,8 @@ async function HomeContent({ params }: { params: Promise<{ locale: string }> }) 
         intro={homePage.howIntro}
         steps={scaffoldCopy.howItWorksSteps}
       />
+
+      <StillRow locale={locale} />
 
       <QuietEditorialSection id="about" title={homePage.aboutTitle}>
         <h3 className="text-body font-semibold">{homePage.aboutDraftLabel}</h3>

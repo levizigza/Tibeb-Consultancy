@@ -43,3 +43,34 @@ export function MaterialFrame({
     </figure>
   );
 }
+
+export function FramedStill({
+  still,
+  priority = false,
+}: {
+  still: {
+    src: string;
+    alt: string;
+    caption: string;
+    width: number;
+    height: number;
+  };
+  priority?: boolean;
+}) {
+  return (
+    <div className="mx-auto w-full max-w-page px-gutter pb-xl sm:px-gutter-lg">
+      <div className="w-full max-w-content" data-motion="lift">
+        <MaterialFrame
+          src={still.src}
+          alt={still.alt}
+          caption={still.caption}
+          width={still.width}
+          height={still.height}
+          sizes="(min-width: 48rem) 48rem, 100vw"
+          priority={priority}
+          aspect="aspect-[16/10]"
+        />
+      </div>
+    </div>
+  );
+}

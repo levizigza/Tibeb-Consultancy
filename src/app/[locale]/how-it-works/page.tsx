@@ -3,12 +3,14 @@ import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/layout/page-header";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
+import { FramedStill } from "@/components/sections/material-frame";
 import { ProcessSection } from "@/components/sections/process-section";
 import { QuietEditorialSection } from "@/components/sections/quiet-editorial-section";
 import { TextLink } from "@/components/ui/text-link";
 import { clientProcess } from "@/content/site/client-process";
 import { scaffoldCopy } from "@/content/site/scaffold-copy";
 import { staticPages } from "@/content/site/information-architecture";
+import { pageStills } from "@/content/site/work-stills";
 import { replaceLocaleInPath } from "@/i18n/href";
 import { metadataForLocale } from "@/i18n/metadata";
 import { routing } from "@/i18n/routing";
@@ -47,6 +49,7 @@ async function HowItWorksContent({
   return (
     <>
       <PageHeader title={page.label} lede={clientProcess.lede} />
+      <FramedStill still={pageStills.planning} />
       <QuietEditorialSection id="how-status" title="Publication status">
         <p>{clientProcess.differs}</p>
         <p>{clientProcess.noOutcome}</p>

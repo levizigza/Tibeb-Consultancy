@@ -34,6 +34,41 @@ export const heroStill: WorkStill = {
   credit: "https://images.unsplash.com/photo-1455390582262-044cdead277a",
 };
 
+export const pageStills = {
+  planning: {
+    src: publicFile("/visuals/notes.jpg"),
+    alt: "An open notebook with the word Notes written on the page, beside a fountain pen and eyeglasses.",
+    caption: `A notebook. ${license} It is not a client file.`,
+    width: 1600,
+    height: 1067,
+    credit: "https://images.unsplash.com/photo-1517842645767-c639042777db",
+  },
+  reading: {
+    src: publicFile("/visuals/reading-room.jpg"),
+    alt: "Curved wooden shelves filled with books in a public reading room.",
+    caption: `A reading room. ${license} It is not the business and not a client library.`,
+    width: 1600,
+    height: 1068,
+    credit: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f",
+  },
+  institution: {
+    src: publicFile("/visuals/building.jpg"),
+    alt: "A white public building with a glass wall, seen from the street.",
+    caption: `A public building. ${license} It is not the business premises and not a government office.`,
+    width: 1600,
+    height: 1067,
+    credit: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
+  },
+  room: {
+    src: publicFile("/visuals/work-room.jpg"),
+    alt: "An empty corridor in a modern work building, with a kitchen and glass meeting rooms.",
+    caption: `An empty work room. ${license} It is not the business premises.`,
+    width: 1600,
+    height: 1068,
+    credit: "https://images.unsplash.com/photo-1497366216548-37526070297c",
+  },
+} as const satisfies Record<string, WorkStill>;
+
 export const serviceStills: Record<ServiceCategoryId, WorkStill> = {
   "immigration-citizenship": {
     src: publicFile("/visuals/travel-wing.jpg"),

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FileMark } from "@/components/brand/file-mark";
+import { SectionRule } from "@/components/sections/section-rule";
 import { TextLink } from "@/components/ui/text-link";
 import { rhythm } from "@/components/sections/rhythm";
 import { resourceCategories } from "@/content/resources/categories";
@@ -26,12 +26,10 @@ export function GuideIndex({
   return (
     <section aria-labelledby="resource-guides" lang="en" className={`${rhythm.grid} border-t border-line`}>
       <div className="mx-auto w-full max-w-page px-gutter sm:px-gutter-lg">
-        <div className="flex items-start gap-4">
-          <FileMark />
-          <h2 id="resource-guides" className="min-w-0 text-heading font-semibold" data-motion="enter">
-            {messages.filterLabel}
-          </h2>
-        </div>
+        <h2 id="resource-guides" className="text-heading font-semibold" data-motion="enter">
+          {messages.filterLabel}
+        </h2>
+        <SectionRule />
         <div role="group" aria-labelledby="resource-guides" className="mt-lg flex flex-col gap-sm sm:flex-row sm:flex-wrap">
           <FilterButton pressed={category === "all"} onClick={() => setCategory("all")}>
             {messages.allCategories}
@@ -61,7 +59,7 @@ function GuideList({ guides, locale }: { guides: readonly GuidePresentation[]; l
   return (
     <ul className="mt-lg flex flex-col gap-sm">
       {guides.map((guide) => (
-        <li key={guide.id} className="rounded-lg border border-line bg-surface p-lg" data-motion="file">
+        <li key={guide.id} className="rounded-lg border border-line bg-surface p-lg" data-motion="lift">
           <h4 className="text-body font-semibold">
             <TextLink href={guide.path} locale={locale}>
               {guide.title}

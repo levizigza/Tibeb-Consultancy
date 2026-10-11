@@ -1,5 +1,5 @@
-import { FileMark } from "@/components/brand/file-mark";
 import { rhythm } from "@/components/sections/rhythm";
+import { SectionRule } from "@/components/sections/section-rule";
 import { ProcessList, ProcessStep } from "@/components/ui/process-step";
 import { TextLink } from "@/components/ui/text-link";
 import type { LocaleCode } from "@/i18n/locales";
@@ -38,12 +38,10 @@ export function ProcessSection({
   return (
     <section aria-labelledby={id} className={`${rhythm.process} border-t border-line`}>
       <div className="mx-auto w-full max-w-page px-gutter sm:px-gutter-lg">
-        <div className="flex items-start gap-4">
-          <FileMark />
-          <h2 id={id} className="min-w-0 text-heading font-semibold" data-motion="enter">
-            {title}
-          </h2>
-        </div>
+        <h2 id={id} className="text-heading font-semibold" data-motion="enter">
+          {title}
+        </h2>
+        <SectionRule />
         {intro ? <p className="mt-4 max-w-content text-body">{intro}</p> : null}
         <div className="mt-xl max-w-content">
           <ProcessList>

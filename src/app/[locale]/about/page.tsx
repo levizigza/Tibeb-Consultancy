@@ -5,10 +5,12 @@ import { PageHeader } from "@/components/layout/page-header";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { ProofSection } from "@/components/sections/proof-section";
 import { QuietEditorialSection } from "@/components/sections/quiet-editorial-section";
+import { FramedStill } from "@/components/sections/material-frame";
 import { SplitSection } from "@/components/sections/split-section";
 import { businessProfile } from "@/content/business/profile";
 import { staticPages } from "@/content/site/information-architecture";
 import { scaffoldCopy } from "@/content/site/scaffold-copy";
+import { pageStills } from "@/content/site/work-stills";
 import { replaceLocaleInPath } from "@/i18n/href";
 import { metadataForLocale } from "@/i18n/metadata";
 import { routing } from "@/i18n/routing";
@@ -42,6 +44,7 @@ async function AboutContent({
   return (
     <>
       <PageHeader title={page.label} lede={page.message} />
+      <FramedStill still={pageStills.institution} />
       <QuietEditorialSection id="draft-positioning" title="Draft positioning">
         <p>{businessProfile.positioning.text}</p>
         <p className="text-meta text-muted">

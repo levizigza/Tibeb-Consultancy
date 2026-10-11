@@ -354,6 +354,46 @@ html[data-opening="skip"] .opening-sequence {
     animation: seal-press 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
+  [data-motion="fade"].is-moving {
+    animation: section-fade 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  [data-motion="fade"].is-moving:nth-child(2) {
+    animation-delay: 90ms;
+  }
+
+  [data-motion="fade"].is-moving:nth-child(3) {
+    animation-delay: 180ms;
+  }
+
+  [data-motion="fade"].is-moving:nth-child(4) {
+    animation-delay: 270ms;
+  }
+
+  [data-motion="lift"].is-moving {
+    animation: card-lift 680ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  [data-motion="lift"].is-moving:nth-child(2) {
+    animation-delay: 90ms;
+  }
+
+  [data-motion="lift"].is-moving:nth-child(3) {
+    animation-delay: 180ms;
+  }
+
+  [data-motion="lift"].is-moving:nth-child(4) {
+    animation-delay: 270ms;
+  }
+
+  [data-motion="lift"].is-moving:nth-child(5) {
+    animation-delay: 360ms;
+  }
+
+  [data-motion="rail"].is-moving {
+    animation: rail-draw 1100ms cubic-bezier(0.65, 0, 0.35, 1) both;
+  }
+
   [data-motion="mark"].is-moving .file-outline-clip {
     transform-origin: top center;
     animation: draw-down 700ms cubic-bezier(0.65, 0, 0.35, 1) both;
@@ -380,6 +420,13 @@ html[data-opening="skip"] .opening-sequence {
 
 .file-mark .file-seal {
   stroke: var(--ornament);
+}
+
+.process-rail {
+  background-image: linear-gradient(var(--foreground), var(--foreground));
+  background-repeat: no-repeat;
+  background-position: 1.2rem 0;
+  background-size: 2px 100%;
 }
 
 @keyframes material-drift {
@@ -437,6 +484,38 @@ html[data-opening="skip"] .opening-sequence {
   to {
     opacity: 1;
     transform: scaleY(1);
+  }
+}
+
+@keyframes section-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes card-lift {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes rail-draw {
+  from {
+    background-size: 2px 0;
+  }
+
+  to {
+    background-size: 2px 100%;
   }
 }
 

@@ -1,5 +1,5 @@
-import { FileMark } from "@/components/brand/file-mark";
 import Link from "next/link";
+import { SectionRule } from "@/components/sections/section-rule";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { ProcessSection } from "@/components/sections/process-section";
@@ -36,16 +36,14 @@ function SourceList({
     <section aria-labelledby={id} className={`${rhythm.quiet} border-t border-line`}>
       <div className="mx-auto w-full max-w-page px-gutter sm:px-gutter-lg">
         <div className="max-w-content">
-          <div className="flex items-start gap-4">
-            <FileMark />
-            <h2 id={id} className="min-w-0 text-heading font-semibold" data-motion="enter">
-              {title}
-            </h2>
-          </div>
+          <h2 id={id} className="text-heading font-semibold" data-motion="enter">
+            {title}
+          </h2>
+          <SectionRule />
           <p className="mt-4 text-body">{intro}</p>
           <ul className="mt-4 flex flex-col gap-4 border-t border-line pt-4">
             {sources.map((source) => (
-              <li key={source.url} data-motion="file">
+              <li key={source.url} data-motion="fade">
                 <a href={source.url} className={`${linkClassName} inline-flex min-h-11 items-center`} rel="noreferrer">
                   {source.title}
                 </a>

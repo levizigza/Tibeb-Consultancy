@@ -35,7 +35,7 @@ export function HeroSection({
           <div className="regal-band mt-6 w-40 max-w-full" aria-hidden="true" data-motion="draw" />
           <p className="mt-lg text-body-lg">{lede}</p>
           {actions.length > 0 ? (
-            <div className="mt-xl flex flex-col gap-3 sm:flex-row sm:flex-wrap" data-motion="file">
+            <div className="mt-xl flex flex-col gap-3 sm:flex-row sm:flex-wrap" data-motion="fade">
               {actions.map((action) => (
                 <ButtonLink key={action.href} href={action.href} variant={action.variant ?? "primary"}>
                   {action.label}

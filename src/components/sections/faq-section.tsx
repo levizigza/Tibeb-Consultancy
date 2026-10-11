@@ -1,5 +1,5 @@
-import { FileMark } from "@/components/brand/file-mark";
 import type { FaqItem } from "@/components/sections/faq-item";
+import { SectionRule } from "@/components/sections/section-rule";
 import { rhythm } from "@/components/sections/rhythm";
 import { InlineLink } from "@/components/ui/link";
 
@@ -21,16 +21,14 @@ export function FaqSection({
   return (
     <section aria-labelledby={id} className={`${rhythm.faq} border-t border-line`}>
       <div className="mx-auto w-full max-w-page px-gutter sm:px-gutter-lg">
-        <div className="flex items-start gap-4">
-          <FileMark />
-          <h2 id={id} className="min-w-0 text-heading font-semibold" data-motion="enter">
-            {title}
-          </h2>
-        </div>
+        <h2 id={id} className="text-heading font-semibold" data-motion="enter">
+          {title}
+        </h2>
+        <SectionRule />
         {intro ? <p className="mt-4 max-w-content text-body">{intro}</p> : null}
         <div className="mt-xl">
           {items.length === 0 ? (
-            <div className="max-w-content" data-motion="file">
+            <div className="max-w-content" data-motion="fade">
               <p className="text-body">{empty}</p>
               {emptyLink ? (
                 <p className="mt-3">
@@ -41,7 +39,7 @@ export function FaqSection({
           ) : (
             <div className="flex max-w-content flex-col">
               {items.map((item) => (
-                <article key={item.id} aria-labelledby={`${id}-${item.id}`} className="border-t border-line py-lg" data-motion="file">
+                <article key={item.id} aria-labelledby={`${id}-${item.id}`} className="border-t border-line py-lg" data-motion="fade">
                   <h3 id={`${id}-${item.id}`} className="text-body font-semibold">
                     {item.question}
                   </h3>

@@ -3,6 +3,7 @@ import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/layout/page-header";
 import { GuideIndex } from "@/components/resources/guide-index";
+import { FramedStill } from "@/components/sections/material-frame";
 import { FaqSection } from "@/components/sections/faq-section";
 import { guidePresentations } from "@/content/resources/publication";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
@@ -11,6 +12,7 @@ import { getPublicFaqs } from "@/content/retrieve";
 import { staticPages } from "@/content/site/information-architecture";
 import { previewQuestions } from "@/content/site/preview-questions";
 import { scaffoldCopy } from "@/content/site/scaffold-copy";
+import { pageStills } from "@/content/site/work-stills";
 import { replaceLocaleInPath } from "@/i18n/href";
 import { metadataForLocale } from "@/i18n/metadata";
 import { routing } from "@/i18n/routing";
@@ -57,6 +59,7 @@ async function ResourcesContent({
   return (
     <>
       <PageHeader title={page.label} lede={page.message} />
+      <FramedStill still={pageStills.reading} />
       <GuideIndex locale={locale} guides={guidePresentations(locale)} />
       <FaqSection
         id="resources-questions"
