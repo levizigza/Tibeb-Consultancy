@@ -317,6 +317,69 @@ html[data-opening="skip"] .opening-sequence {
   [data-motion="drift"].is-moving {
     animation: material-drift 18s ease-in-out infinite alternate;
   }
+
+  [data-motion="file"].is-moving {
+    animation: file-place 680ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  [data-motion="file"].is-moving:nth-child(2) {
+    animation-delay: 70ms;
+  }
+
+  [data-motion="file"].is-moving:nth-child(3) {
+    animation-delay: 140ms;
+  }
+
+  [data-motion="file"].is-moving:nth-child(4) {
+    animation-delay: 210ms;
+  }
+
+  [data-motion="file"].is-moving:nth-child(5) {
+    animation-delay: 280ms;
+  }
+
+  [data-motion="file"].is-moving:nth-child(6) {
+    animation-delay: 350ms;
+  }
+
+  [data-motion="file"].is-moving:nth-child(7) {
+    animation-delay: 420ms;
+  }
+
+  [data-motion="file"].is-moving:nth-child(8) {
+    animation-delay: 490ms;
+  }
+
+  [data-motion="seal"].is-moving {
+    animation: seal-press 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  [data-motion="mark"].is-moving .file-outline-clip {
+    transform-origin: top center;
+    animation: draw-down 700ms cubic-bezier(0.65, 0, 0.35, 1) both;
+  }
+
+  [data-motion="mark"].is-moving .file-writing-clip {
+    transform-origin: left center;
+    animation: draw-right 480ms cubic-bezier(0.65, 0, 0.35, 1) 460ms both;
+  }
+
+  [data-motion="mark"].is-moving .file-seal-clip {
+    transform-origin: 69% 79%;
+    animation: seal-press 420ms cubic-bezier(0.16, 1, 0.3, 1) 860ms both;
+  }
+}
+
+.file-mark path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+.file-mark .file-seal {
+  stroke: var(--ornament);
 }
 
 @keyframes material-drift {
@@ -338,6 +401,54 @@ html[data-opening="skip"] .opening-sequence {
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes file-place {
+  from {
+    opacity: 0;
+    transform: translateX(0.7rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes seal-press {
+  from {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes draw-down {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes draw-right {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleX(1);
   }
 }
 

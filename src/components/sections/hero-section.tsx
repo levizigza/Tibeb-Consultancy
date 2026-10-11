@@ -1,3 +1,4 @@
+import { FileMark } from "@/components/brand/file-mark";
 import { MaterialFrame } from "@/components/sections/material-frame";
 import { ButtonLink } from "@/components/ui/button";
 import { rhythm } from "@/components/sections/rhythm";
@@ -25,13 +26,16 @@ export function HeroSection({
       <div className="mx-auto grid w-full max-w-page grid-cols-1 items-start gap-xl px-gutter sm:px-gutter-lg lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
         <div className="max-w-content">
           {eyebrow ? <p className="text-meta font-medium text-muted">{eyebrow}</p> : null}
-          <h1 className="mt-4 text-display font-semibold tracking-tight" data-motion="enter">
-            {title}
-          </h1>
+          <div className="mt-4 flex items-start gap-4">
+            <FileMark className="mt-1 h-16 w-12 sm:h-20 sm:w-14" />
+            <h1 className="min-w-0 text-display font-semibold tracking-tight" data-motion="enter">
+              {title}
+            </h1>
+          </div>
           <div className="regal-band mt-6 w-40 max-w-full" aria-hidden="true" data-motion="draw" />
           <p className="mt-lg text-body-lg">{lede}</p>
           {actions.length > 0 ? (
-            <div className="mt-xl flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div className="mt-xl flex flex-col gap-3 sm:flex-row sm:flex-wrap" data-motion="file">
               {actions.map((action) => (
                 <ButtonLink key={action.href} href={action.href} variant={action.variant ?? "primary"}>
                   {action.label}

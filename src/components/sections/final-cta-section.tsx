@@ -1,3 +1,4 @@
+import { FileMark } from "@/components/brand/file-mark";
 import { ButtonLink } from "@/components/ui/button";
 import { rhythm } from "@/components/sections/rhythm";
 
@@ -17,9 +18,12 @@ export function FinalCtaSection({
       <div className="regal-band" aria-hidden="true" data-motion="draw" />
       <div className={`${rhythm.cta} mx-auto w-full max-w-page px-gutter sm:px-gutter-lg`}>
         <div className="max-w-content">
-          <h2 id={id} className="text-heading font-semibold">
-            {title}
-          </h2>
+          <div className="flex items-start gap-4">
+            <FileMark />
+            <h2 id={id} className="min-w-0 text-heading font-semibold" data-motion="enter">
+              {title}
+            </h2>
+          </div>
           <p className="mt-4 text-body">{text}</p>
           <div className="mt-xl" data-motion="enter">
             <ButtonLink href={action.href} variant="seal">

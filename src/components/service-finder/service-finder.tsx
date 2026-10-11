@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type Ref } from "react";
+import { FileMark } from "@/components/brand/file-mark";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { rhythm } from "@/components/sections/rhythm";
 import {
@@ -117,9 +118,12 @@ export function ServiceFinder({
     <section aria-labelledby="service-finder" lang="en" className={`${rhythm.grid} border-t border-line`}>
       <div className="mx-auto w-full max-w-page px-gutter sm:px-gutter-lg">
         <div className="max-w-content">
-          <h2 id="service-finder" className="text-heading font-semibold">
-            {messages.heading}
-          </h2>
+          <div className="flex items-start gap-4">
+            <FileMark />
+            <h2 id="service-finder" className="min-w-0 text-heading font-semibold" data-motion="enter">
+              {messages.heading}
+            </h2>
+          </div>
           <p className="mt-4 text-body">{messages.intro}</p>
         </div>
 
@@ -132,7 +136,7 @@ export function ServiceFinder({
               {finderIntents.map((item) => {
                 const selected = state.intentId === item.id;
                 return (
-                  <li key={item.id}>
+                  <li key={item.id} data-motion="file">
                     <button
                       ref={(node) => {
                         choiceRefs.current[item.id] = node;

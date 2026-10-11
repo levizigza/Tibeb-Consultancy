@@ -111,6 +111,7 @@ export function InquiryForm({
       <fieldset
         id={fieldId.contactMethod}
         className="flex flex-col gap-3"
+        data-motion="file"
         aria-invalid={errorFor("contactMethod") ? true : undefined}
         aria-describedby={describedBy("contactMethod", `${baseId}-method-hint`)}
       >
@@ -158,7 +159,7 @@ export function InquiryForm({
         <textarea id={fieldId.inquiry} name="inquiry" rows={5} maxLength={500} aria-invalid={errorFor("inquiry") ? true : undefined} aria-describedby={describedBy("inquiry", `${baseId}-note-hint`)} className={`${controlClass} py-2`} />
       </Field>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2" data-motion="file">
         <label htmlFor={fieldId.privacyAcknowledgement} className="flex min-h-11 w-full min-w-0 items-start gap-3 text-body">
           <input id={fieldId.privacyAcknowledgement} name="privacyAcknowledgement" type="checkbox" required className="mt-1 size-6 shrink-0" aria-invalid={errorFor("privacyAcknowledgement") ? true : undefined} aria-describedby={errorFor("privacyAcknowledgement") ? `${fieldId.privacyAcknowledgement}-error` : undefined} />
           <span className="min-w-0">
@@ -173,9 +174,11 @@ export function InquiryForm({
         <input id="companyWebsite" name="companyWebsite" type="text" tabIndex={-1} autoComplete="off" defaultValue="" />
       </div>
 
-      <Button type="submit" disabled={pending}>
-        {pending ? inquiryMessages.submitting : inquiryMessages.submit}
-      </Button>
+      <div data-motion="file">
+        <Button type="submit" disabled={pending}>
+          {pending ? inquiryMessages.submitting : inquiryMessages.submit}
+        </Button>
+      </div>
     </form>
   );
 }
@@ -198,7 +201,7 @@ function Field({
   children: ReactNode;
 }) {
   return (
-    <div className="grid w-full min-w-0 gap-2">
+    <div className="grid w-full min-w-0 gap-2" data-motion="file">
       <label htmlFor={fieldId[field]} className="text-meta font-medium">
         {label} {required ? <span className="text-muted">({inquiryMessages.required})</span> : null}
       </label>

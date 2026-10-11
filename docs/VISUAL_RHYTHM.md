@@ -4,7 +4,7 @@ The shell uses the Clear ground tokens in `docs/DESIGN_SYSTEM.md` and the routes
 
 No founder portrait or client quotation is invented. Decorative stills are licensed material photographs, and the page says they are not the business. A split section without a supplied image shows the sentence "No photograph has been supplied."
 
-Motion is mixed with stillness. The title, the gold rule, cards, step numbers, and the closing button move once as they enter. The illustrative stills drift slowly. Reading sections, the header, and the footer stay still. `prefers-reduced-motion: reduce` keeps the whole page still.
+Motion is mixed with stillness. A document mark draws beside each section title: the page outline, three lines, then a gold seal. Cards, steps, questions, form fields, and section copy slide in once, like a file being set down. The illustrative stills drift slowly. The header and the footer stay still. `prefers-reduced-motion: reduce` keeps the whole page still, and the document mark stays fully drawn.
 
 ## Breakpoints
 

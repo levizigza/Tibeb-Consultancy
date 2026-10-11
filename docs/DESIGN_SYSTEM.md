@@ -87,7 +87,7 @@ Motion is 150ms and 250ms, with the standard ease. `prefers-reduced-motion: redu
 
 The first visit in a session opens on a navy curtain. The wordmark settles, the gold line draws, and the curtain rises. Skip and Escape close it. A return visit in the same session, and anyone who asks for reduced motion, sees the page directly.
 
-After that, motion and stillness alternate. The homepage title, the gold rule under it, service cards, process numbers, and the closing button rise or draw when they enter the screen. Illustrative stills drift slowly inside a navy frame. Headings, body copy, the header, the footer, and the question list stay still. Reduced motion leaves every one of those still.
+After that, motion and stillness alternate. A small document mark draws beside section titles: the sheet, the writing lines, then the gold seal. Service cards, process steps, questions, form fields, and each section’s copy slide in once. Illustrative stills drift slowly inside a navy frame. The header and the footer stay still. Reduced motion leaves every one of those still, with the document mark already complete.
 
 Gold sits on navy as a repeating diamond chain: under the header, over the footer, across each service card, under page titles, and along the closing panel. Photograph frames use gold corner brackets on the same navy. On ivory alone the metal is too faint to see. The stills are Unsplash photographs of paperwork and the subjects on the service map: a pen on paper, travel, a blank application, a blank resume, and file folders. Each caption says the still is illustrative and not a picture of the business.
 

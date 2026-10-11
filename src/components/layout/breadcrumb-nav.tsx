@@ -23,7 +23,7 @@ export function BreadcrumbNav({
       {structured ? (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdScript(structured) }} />
       ) : null}
-      <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-meta">
+      <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-meta" data-motion="enter">
         {crumbs.map((crumb, index) => {
           const current = index === crumbs.length - 1;
           return (

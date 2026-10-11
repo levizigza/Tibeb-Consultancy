@@ -13,7 +13,7 @@ const kindLabel = {
 
 function PriceCard({ item }: { item: PublicPricePresentation }) {
   return (
-    <article className="rounded-lg border border-line bg-surface p-lg shadow-rest">
+    <article className="rounded-lg border border-line bg-surface p-lg shadow-rest" data-motion="file">
       <h3 className="text-heading-sm font-semibold">{item.label}</h3>
       <p className="mt-3 text-meta font-medium">{kindLabel[item.kind]}</p>
       {item.amountCad === null ? (
@@ -86,7 +86,7 @@ export function PriceStatusList({ items }: { items: readonly PublicPricePresenta
     return (
       <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {pricingPage.rows.map((row) => (
-          <div key={row.id} className="border-t border-line pt-3">
+          <div key={row.id} className="border-t border-line pt-3" data-motion="file">
             <dt className="text-meta text-muted">{row.label}</dt>
             <dd className="mt-1 font-medium">{row.status}</dd>
           </div>
