@@ -198,24 +198,28 @@ body > * {
   top: 0.4rem;
   left: 0.4rem;
   border-width: 2px 0 0 2px;
+  transform-origin: top left;
 }
 
 .regal-corner-ne {
   top: 0.4rem;
   right: 0.4rem;
   border-width: 2px 2px 0 0;
+  transform-origin: top right;
 }
 
 .regal-corner-sw {
   bottom: 0.4rem;
   left: 0.4rem;
   border-width: 0 0 2px 2px;
+  transform-origin: bottom left;
 }
 
 .regal-corner-se {
   bottom: 0.4rem;
   right: 0.4rem;
   border-width: 0 2px 2px 0;
+  transform-origin: bottom right;
 }
 
 .edge-rule-bottom {
@@ -236,177 +240,89 @@ html[data-opening="skip"] .opening-sequence {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .opening-mark {
-    animation: opening-mark 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  .opening-sub {
-    animation: opening-mark 700ms cubic-bezier(0.16, 1, 0.3, 1) 700ms both;
-  }
-
-  .opening-rule {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: opening-rule 700ms cubic-bezier(0.65, 0, 0.35, 1) 450ms both;
-  }
-
   .opening-sequence {
-    animation: opening-curtain 900ms cubic-bezier(0.76, 0, 0.24, 1) 1600ms forwards;
-  }
-}
-
-@keyframes opening-mark {
-  from {
-    opacity: 0;
-    transform: translateY(0.75rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes opening-rule {
-  from {
-    transform: scaleX(0);
-  }
-
-  to {
-    transform: scaleX(1);
+    animation: opening-curtain 700ms ease 500ms forwards;
   }
 }
 
 @keyframes opening-curtain {
   from {
-    transform: translateY(0);
+    opacity: 1;
   }
 
   to {
-    transform: translateY(-100%);
+    opacity: 0;
   }
 }
 
-/* Selected visuals move once. Reading copy stays still. */
+/* Content is uncovered from the top. The gold chain travels. Nothing slides or draws. */
 @media (prefers-reduced-motion: no-preference) {
-  [data-motion="enter"].is-moving {
-    animation: section-rise 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  [data-motion="enter"].is-moving,
+  [data-motion="rise"].is-moving,
+  [data-motion="fade"].is-moving,
+  [data-motion="lift"].is-moving,
+  [data-motion="file"].is-moving,
+  [data-motion="drift"].is-moving,
+  [data-motion="seal"].is-moving {
+    animation: uncover 780ms cubic-bezier(0.77, 0, 0.18, 1) both;
   }
 
-  [data-motion="rise"].is-moving {
-    animation: section-rise 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  [data-motion="rise"].is-moving:nth-child(2) {
+  [data-motion="rise"].is-moving:nth-child(2),
+  [data-motion="fade"].is-moving:nth-child(2),
+  [data-motion="lift"].is-moving:nth-child(2),
+  [data-motion="file"].is-moving:nth-child(2) {
     animation-delay: 80ms;
   }
 
-  [data-motion="rise"].is-moving:nth-child(3) {
+  [data-motion="rise"].is-moving:nth-child(3),
+  [data-motion="fade"].is-moving:nth-child(3),
+  [data-motion="lift"].is-moving:nth-child(3),
+  [data-motion="file"].is-moving:nth-child(3) {
     animation-delay: 160ms;
   }
 
-  [data-motion="rise"].is-moving:nth-child(4) {
+  [data-motion="rise"].is-moving:nth-child(4),
+  [data-motion="fade"].is-moving:nth-child(4),
+  [data-motion="lift"].is-moving:nth-child(4),
+  [data-motion="file"].is-moving:nth-child(4) {
     animation-delay: 240ms;
   }
 
-  [data-motion="draw"].is-moving {
-    transform-origin: left center;
-    animation: opening-rule 700ms cubic-bezier(0.65, 0, 0.35, 1) 180ms both;
-  }
-
-  [data-motion="drift"].is-moving {
-    animation: material-drift 18s ease-in-out infinite alternate;
-  }
-
-  [data-motion="file"].is-moving {
-    animation: file-place 680ms cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  [data-motion="file"].is-moving:nth-child(2) {
-    animation-delay: 70ms;
-  }
-
-  [data-motion="file"].is-moving:nth-child(3) {
-    animation-delay: 140ms;
-  }
-
-  [data-motion="file"].is-moving:nth-child(4) {
-    animation-delay: 210ms;
-  }
-
-  [data-motion="file"].is-moving:nth-child(5) {
-    animation-delay: 280ms;
+  [data-motion="file"].is-moving:nth-child(5),
+  [data-motion="lift"].is-moving:nth-child(5) {
+    animation-delay: 320ms;
   }
 
   [data-motion="file"].is-moving:nth-child(6) {
-    animation-delay: 350ms;
+    animation-delay: 400ms;
   }
 
   [data-motion="file"].is-moving:nth-child(7) {
-    animation-delay: 420ms;
+    animation-delay: 480ms;
   }
 
   [data-motion="file"].is-moving:nth-child(8) {
-    animation-delay: 490ms;
+    animation-delay: 560ms;
   }
 
-  [data-motion="seal"].is-moving {
-    animation: seal-press 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  [data-motion="draw"].is-moving::before {
+    animation: chain-travel 1.6s linear both;
   }
 
-  [data-motion="fade"].is-moving {
-    animation: section-fade 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  [data-motion="turn"].is-moving .regal-corner {
+    animation: corner-turn 640ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
-  [data-motion="fade"].is-moving:nth-child(2) {
-    animation-delay: 90ms;
+  [data-motion="turn"].is-moving .regal-corner-ne {
+    animation-delay: 80ms;
   }
 
-  [data-motion="fade"].is-moving:nth-child(3) {
-    animation-delay: 180ms;
+  [data-motion="turn"].is-moving .regal-corner-sw {
+    animation-delay: 160ms;
   }
 
-  [data-motion="fade"].is-moving:nth-child(4) {
-    animation-delay: 270ms;
-  }
-
-  [data-motion="lift"].is-moving {
-    animation: card-lift 680ms cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  [data-motion="lift"].is-moving:nth-child(2) {
-    animation-delay: 90ms;
-  }
-
-  [data-motion="lift"].is-moving:nth-child(3) {
-    animation-delay: 180ms;
-  }
-
-  [data-motion="lift"].is-moving:nth-child(4) {
-    animation-delay: 270ms;
-  }
-
-  [data-motion="lift"].is-moving:nth-child(5) {
-    animation-delay: 360ms;
-  }
-
-  [data-motion="rail"].is-moving {
-    animation: rail-draw 1100ms cubic-bezier(0.65, 0, 0.35, 1) both;
-  }
-
-  [data-motion="mark"].is-moving .file-outline-clip {
-    transform-origin: top center;
-    animation: draw-down 700ms cubic-bezier(0.65, 0, 0.35, 1) both;
-  }
-
-  [data-motion="mark"].is-moving .file-writing-clip {
-    transform-origin: left center;
-    animation: draw-right 480ms cubic-bezier(0.65, 0, 0.35, 1) 460ms both;
-  }
-
-  [data-motion="mark"].is-moving .file-seal-clip {
-    transform-origin: 69% 79%;
-    animation: seal-press 420ms cubic-bezier(0.16, 1, 0.3, 1) 860ms both;
+  [data-motion="turn"].is-moving .regal-corner-se {
+    animation-delay: 240ms;
   }
 }
 
@@ -429,105 +345,37 @@ html[data-opening="skip"] .opening-sequence {
   background-size: 2px 100%;
 }
 
-@keyframes material-drift {
+@keyframes uncover {
   from {
-    transform: scale(1);
+    clip-path: inset(100% 0 0 0);
   }
 
   to {
-    transform: scale(1.07);
+    clip-path: inset(0);
   }
 }
 
-@keyframes section-rise {
+@keyframes chain-travel {
+  from {
+    mask-position: left center;
+    -webkit-mask-position: left center;
+  }
+
+  to {
+    mask-position: 72px center;
+    -webkit-mask-position: 72px center;
+  }
+}
+
+@keyframes corner-turn {
   from {
     opacity: 0;
-    transform: translateY(0.75rem);
+    transform: rotate(-35deg);
   }
 
   to {
     opacity: 1;
     transform: none;
-  }
-}
-
-@keyframes file-place {
-  from {
-    opacity: 0;
-    transform: translateX(0.7rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes seal-press {
-  from {
-    opacity: 0;
-    transform: scale(0.82);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes draw-down {
-  from {
-    opacity: 0;
-    transform: scaleY(0);
-  }
-
-  to {
-    opacity: 1;
-    transform: scaleY(1);
-  }
-}
-
-@keyframes section-fade {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes card-lift {
-  from {
-    opacity: 0;
-    transform: translateY(1.25rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes rail-draw {
-  from {
-    background-size: 2px 0;
-  }
-
-  to {
-    background-size: 2px 100%;
-  }
-}
-
-@keyframes draw-right {
-  from {
-    opacity: 0;
-    transform: scaleX(0);
-  }
-
-  to {
-    opacity: 1;
-    transform: scaleX(1);
   }
 }
 

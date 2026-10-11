@@ -21,7 +21,7 @@ export function MaterialFrame({
 }) {
   return (
     <figure className="min-w-0">
-      <div className="relative bg-curtain p-3 sm:p-3.5">
+      <div className="relative bg-curtain p-3 sm:p-3.5" data-motion="turn">
         <span className="regal-corner regal-corner-nw" aria-hidden="true" />
         <span className="regal-corner regal-corner-ne" aria-hidden="true" />
         <span className="regal-corner regal-corner-sw" aria-hidden="true" />
