@@ -50,7 +50,7 @@ async function HowItWorksContent({
     <>
       <PageHeader title={page.label} lede={clientProcess.lede} />
       <FramedStill still={pageStills.planning} />
-      <QuietEditorialSection id="how-status" title="Publication status">
+      <QuietEditorialSection id="how-status" title="Before work begins">
         <p>{clientProcess.differs}</p>
         <p>{clientProcess.noOutcome}</p>
       </QuietEditorialSection>

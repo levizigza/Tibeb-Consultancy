@@ -105,7 +105,7 @@ describe("technical SEO", () => {
       path: "/services/career-employment/resume-writing",
     });
     expect(metadata.title).toBe("Resume writing");
-    expect(metadata.description).toContain("not approved for publication");
+    expect(metadata.description).toContain("does not start the work");
     expect(metadata.robots).toEqual({ index: false, follow: false });
     expect(metadata.alternates?.canonical).toBe("/en/services/career-employment/resume-writing");
   });

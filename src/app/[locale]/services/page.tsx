@@ -5,12 +5,9 @@ import { PageHeader } from "@/components/layout/page-header";
 import { ServiceFinder } from "@/components/service-finder/service-finder";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { ServiceGridSection } from "@/components/sections/service-grid-section";
-import { Badge } from "@/components/ui/badge";
 import { InlineLink } from "@/components/ui/link";
 import { finderIntents } from "@/content/site/service-finder";
 import { publishedLinksForIntent } from "@/lib/service-finder/match";
-import { complianceRecords } from "@/content/compliance/records";
-import { isPaidServiceBookable } from "@/content/compliance/safeguards";
 import {
   serviceFamilies,
   servicesInFamily,
@@ -45,10 +42,6 @@ async function ServicesContent({
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
 
-  const bookableIds = new Set(
-    complianceRecords.filter((record) => isPaidServiceBookable(record)).map((record) => record.id),
-  );
-
   return (
     <>
       <PageHeader title={scaffoldCopy.servicesTitle} lede={scaffoldCopy.servicesMessage} />
@@ -62,24 +55,22 @@ async function ServicesContent({
       <ServiceGridSection
         id="service-groups"
         title="Service groups"
-        intro="Open a group to see the names inside it. Each name is closed."
+        intro="Open a group to see the names inside it."
         items={serviceFamilies.map((family) => ({
           href: replaceLocaleInPath(family.path, locale),
           title: family.label,
           detail: family.restriction,
-          status: "Not approved",
           image: serviceStills[family.id],
           children: (
             <ul className="mt-4 flex flex-col gap-2 border-t border-line pt-4">
               {servicesInFamily(family.id).map((service) => (
-                <li key={service.id} className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between">
+                <li key={service.id}>
                   <InlineLink
                     href={replaceLocaleInPath(service.path, locale)}
                     className="block min-h-11 max-w-full py-2"
                   >
                     {service.label}
                   </InlineLink>
-                  <Badge>{bookableIds.has(service.id) ? "Gate open, no request flow" : "Not approved"}</Badge>
                 </li>
               ))}
             </ul>
@@ -89,7 +80,7 @@ async function ServicesContent({
       <FinalCtaSection
         id="services-next"
         title="How it works"
-        text="The next page explains the steps. It does not open a file."
+        text="The next page explains how a matter proceeds."
         action={{
           href: replaceLocaleInPath(scaffoldCopy.primaryCta.path, locale),
           label: scaffoldCopy.primaryCta.label,

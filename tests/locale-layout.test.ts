@@ -39,7 +39,7 @@ describe("locale layout", () => {
     for (const locale of ["am", "ti", "om"] as const) {
       const notice = renderToStaticMarkup(createElement(TranslationFallback, { locale }));
       expect(notice).toContain('id="translation-fallback"');
-      expect(notice).toContain("not fully localized");
+      expect(notice).toContain("shown in English");
       expect(notice).toContain(`lang="${locale}"`);
       expect(documentLanguage(locale)).toBe("en");
       expect(resolveChrome(locale).fallback).toBe(true);

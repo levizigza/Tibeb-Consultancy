@@ -55,14 +55,13 @@ export const englishChrome = {
   menu: "Menu",
   closeMenu: "Close menu",
   languages: "Languages",
-  languageMenuNote: "Website language. This list is not a consultation language.",
+  languageMenuNote: "Website language. Choosing one does not set the language of a meeting.",
   serviceGroups: "Service groups",
   primaryNav: "Primary",
   mobileNav: "Mobile",
   footerNav: "Footer",
   pages: "Pages",
-  translationPending:
-    "This page is not fully localized. An approved {language} translation is not available, so it shows the English development copy.",
+  translationPending: "This page is shown in English. The {language} translation is not on the site yet.",
   inquiry: {
     name: "Name",
     email: "Email",

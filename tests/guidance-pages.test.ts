@@ -115,9 +115,7 @@ describe("pricing presentation", () => {
 
   it("renders the empty fee list and a confirmed card without calling a fee included", () => {
     const empty = renderToStaticMarkup(createElement(PriceStatusList, { items: [] }));
-    expect(empty).toContain("Approved fixed price");
-    expect(empty).toContain("Not approved");
-    expect(empty).toContain("grid-cols-1");
+    expect(empty).toBe("");
     expect(empty).not.toContain("$");
 
     const [item] = selectPublicPricePresentations([presentation()], new Set(["fixture-career"]));

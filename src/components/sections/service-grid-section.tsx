@@ -9,7 +9,7 @@ export type ServiceGridItem = {
   href: string;
   title: string;
   detail: string;
-  status: string;
+  status?: string;
   children?: ReactNode;
   image?: {
     src: string;
@@ -66,9 +66,11 @@ export function ServiceGridSection({
                     </Link>
                   </h3>
                   <p className="mt-3 text-body text-muted">{item.detail}</p>
-                  <p className="mt-4">
-                    <Badge>{item.status}</Badge>
-                  </p>
+                  {item.status ? (
+                    <p className="mt-4">
+                      <Badge>{item.status}</Badge>
+                    </p>
+                  ) : null}
                   {item.children}
                 </div>
                 {item.image ? (

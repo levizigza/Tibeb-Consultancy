@@ -15,26 +15,24 @@ export const previewQuestionSchema = z.object({
 
 export type PreviewQuestion = z.infer<typeof previewQuestionSchema>;
 
-export const previewQuestionsIntro =
-  "These answers describe this website while it is being built. An approved question-and-answer policy does not exist yet.";
+export const previewQuestionsIntro = "Answers to the questions people ask before they write.";
 
 /**
- * Answers restate facts already published on the preview.
- * They are not an approved client policy, fee, or processing time.
+ * Public answers. They do not state a fee, a processing time, or a government outcome.
  */
 export const previewQuestions: readonly PreviewQuestion[] = [
   {
     id: "services-offered",
     question: "Which services are offered?",
     answer:
-      "No service is approved for publication. The Services page has a finder and four groups. The finder links only to a published service, and none is published. Each group is marked not approved.",
+      "The Services page groups the work into four areas. Open the area closest to your question. We will tell you whether we can take it on. A page on this site does not, by itself, retain the firm.",
     links: [{ path: "/services", label: "Services" }],
   },
   {
     id: "consultation",
     question: "How does consultation work?",
     answer:
-      "A consultation cannot be booked from this preview. The contact page has a general inquiry form. No consultation language is confirmed.",
+      "Start with the inquiry form. We reply about whether a conversation is the right next step. The form does not reserve a meeting.",
     links: [
       { path: "/how-it-works", label: "How it works" },
       { path: "/contact", label: "Contact" },
@@ -44,48 +42,47 @@ export const previewQuestions: readonly PreviewQuestion[] = [
     id: "languages",
     question: "What languages are available?",
     answer:
-      "The website languages are English, Amharic, Tigrinya, and Afaan Oromoo. English is the only language with development copy. No consultation language has been confirmed.",
+      "The website lists English, Amharic, Tigrinya, and Afaan Oromoo. The pages are written in English today. A language name is not a promise that a meeting is offered in that language.",
     links: [{ path: "/", label: "Home" }],
   },
   {
     id: "prices",
     question: "How are prices determined?",
-    answer:
-      "No price is approved for publication. This site does not state how a fee would be calculated, and it does not show a fixed price, a starting price, or a quotation.",
+    answer: "Fees are discussed after we understand the work. This site does not list an amount.",
     links: [{ path: "/pricing", label: "Pricing" }],
   },
   {
     id: "information",
     question: "What information might be required?",
     answer:
-      "Do not send documents or personal history through this site. The inquiry form asks for a name, a way to reply, a language preference, a service group, and an optional short note.",
+      "The inquiry form asks for a name, a way to reply, a language preference, a service group, and an optional short note. Do not send identity documents, tax papers, or immigration files.",
     links: [{ path: "/contact", label: "Contact" }],
   },
   {
     id: "duration",
     question: "How long does TIBEB's part of the service take?",
-    answer: "No duration is approved for publication. This answer does not state a processing time.",
+    answer: "Timing depends on the work. This site does not state a processing time.",
     links: [{ path: "/how-it-works", label: "How it works" }],
   },
   {
     id: "government",
     question: "Is TIBEB affiliated with the Canadian government?",
     answer:
-      "No statement about a government relationship has been approved. This site does not present the business as a government channel.",
+      "TIBEB Consultancy is an independent firm. It is not part of the Canadian government, and it is not an official channel for a government department.",
     links: [{ path: "/services/government-forms", label: "Government & Forms" }],
   },
   {
     id: "information-handling",
     question: "How is customer information handled?",
     answer:
-      "No privacy notice is approved for publication. Do not send documents or personal history through this site.",
+      "Send only a name, a way to reply, and a short note. Do not send identity documents, tax papers, or immigration files through this site.",
     links: [{ path: "/contact", label: "Contact" }],
   },
   {
     id: "after-inquiry",
     question: "What happens after sending an inquiry?",
     answer:
-      "If email delivery is not configured, the form says the inquiry was not sent. No follow-up step is approved.",
+      "A delivered message reaches the firm as a general question. It does not reserve a meeting. If delivery is not connected, the page says the message was not sent.",
     links: [{ path: "/contact", label: "Contact" }],
   },
 ];

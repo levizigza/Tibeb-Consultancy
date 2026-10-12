@@ -5,20 +5,19 @@ import { locales } from "@/i18n/locales";
 import { localeCopyIsPublishable } from "@/i18n/review/validate";
 
 export const previewCopy = {
-  description:
-    "The TIBEB Consultancy website is being built and is not open for client services.",
-  introduction: `${businessProfile.positioning.text} This is a temporary development introduction. The public website is still being built.`,
-  statusTitle: "This site is being built",
+  description: `${businessProfile.positioning.text}`,
+  introduction: businessProfile.positioning.text,
+  statusTitle: "The firm",
   statusBody:
-    "Service descriptions, contact methods, and translations will appear only after the business confirms them. Client services cannot be requested from this preview.",
-  languagesTitle: "Languages planned for this website",
+    "Write with the question. We will tell you whether we can help, and what the work would involve.",
+  languagesTitle: "Languages",
   languagesNote:
-    "English is the only language with development copy. Amharic, Tigrinya, and Oromo translations have not been written or approved.",
-  publishedServicesTitle: "Published services",
-  publishedServicesEmpty: "No services are approved for publication.",
+    "This website is written in English. Amharic, Tigrinya, and Afaan Oromoo are listed because translations are planned. A language name is not a promise that a meeting is offered in that language.",
+  publishedServicesTitle: "Services",
+  publishedServicesEmpty: "Choose the area closest to your question. We will tell you whether we can help.",
   documentationPath: "/development",
-  documentationLabel: "Development documentation",
-  footerNote: "This preview is not open for client work.",
+  documentationLabel: "Notes",
+  footerNote: "An independent firm in Canada.",
 } as const;
 
 export function translationPendingMessage(locale: LocaleCode): string | null {

@@ -19,7 +19,7 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const guide = guidePresentation(slug, locale);
-  if (!guide) return {};
+  if (!guide?.published) return {};
   return localePageMetadata({
     locale,
     path: guide.path,
@@ -44,7 +44,7 @@ async function ResourceGuideContent({
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   const guide = guidePresentation(slug, locale);
-  if (!guide) notFound();
+  if (!guide?.published) notFound();
 
   return <GuideArticle guide={guide} locale={locale} />;
 }

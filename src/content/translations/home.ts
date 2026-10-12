@@ -3,46 +3,29 @@ import { scaffoldCopy } from "@/content/site/scaffold-copy";
 import { previewCopy } from "@/content/translations/preview";
 
 /**
- * Homepage sentences that are allowed on the development preview.
- * Outcome headlines, fees, and consultation promises stay in the gaps document.
+ * Public homepage sentences.
+ * Fees, credentials, and a founder profile stay off the page until the business supplies them.
  */
 export const homePage = {
   title: businessProfile.publicName,
   description: previewCopy.description,
-  heroLede: `${businessProfile.positioning.text} This sentence is a development draft. It is not an approved public claim. ${previewCopy.statusBody}`,
+  heroLede: `${businessProfile.positioning.text} ${previewCopy.statusBody}`,
   contactLabel: "Contact",
   contactPath: "/contact",
   servicesLabel: scaffoldCopy.servicesLink.label,
   servicesPath: scaffoldCopy.servicesLink.path,
-  trustTitle: "Language and trust",
+  trustTitle: "Languages",
   trustIntro: previewCopy.languagesNote,
-  credentialLabel: "Credentials",
-  credentialValue: "No credential is approved for publication.",
-  governmentLabel: "Government relationship",
-  governmentValue:
-    "No statement about a government relationship has been approved. This page does not present the business as a government channel.",
   servicesTitle: "Services",
   servicesIntro: `${scaffoldCopy.servicesMessage} ${previewCopy.publishedServicesEmpty}`,
-  closedStatus: "Not approved",
   howTitle: "How it works",
-  howIntro:
-    "The site has a service map so you can see how the work is grouped. Nothing on that map can be requested yet.",
+  howIntro: "A short path from the first note to a clear scope. Nothing begins before that.",
   aboutTitle: "About",
-  aboutDraftLabel: "Draft positioning",
-  aboutDraftNote: "This sentence is a development draft. It is not an approved public claim.",
-  aboutFounder:
-    "No founder name, photograph, or history is approved. This page does not add a founder story.",
-  supportListLead:
-    "These consultation languages are approved for publication. Website language names stay separate from this list.",
-  evidenceTitle: "Client evidence",
-  evidenceEmpty: "No client statement or qualification is approved for publication.",
-  supportTitle: "Language support",
-  supportBody:
-    "The language names above are planned website languages. They are not languages confirmed for a consultation. No consultation language has been confirmed. Amharic, Tigrinya, and Afaan Oromoo routes show this English copy until an approved translation exists.",
+  aboutBody: businessProfile.positioning.text,
+  aboutIndependent: "TIBEB Consultancy is an independent firm. It is not part of the Canadian government.",
   faqTitle: "Questions",
-  faqEmpty:
-    "An approved question-and-answer policy does not exist yet. The Resources page lists preview answers about this site.",
+  faqEmpty: "Common questions are answered on the Resources page.",
   ctaTitle: "Contact",
   ctaText:
-    "No public email, phone number, or address has been approved. The Contact page has a general inquiry form. It does not book a consultation.",
+    "Send a general question. Include a name and a way to reply. Do not attach an identity document, a tax paper, or an immigration file.",
 } as const;

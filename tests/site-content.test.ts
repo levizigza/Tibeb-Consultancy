@@ -15,15 +15,13 @@ const unpublishedClaims = [
 ];
 
 describe("development site content", () => {
-  it("identifies the business and states that the site is still being built", () => {
-    expect(previewCopy.description).toContain("is being built");
-    expect(previewCopy.description).toContain("not open for client services");
+  it("identifies the business without calling the public site a draft", () => {
+    expect(previewCopy.description).toContain("Black-owned, Ethiopian-led");
+    expect(previewCopy.description).not.toContain("is being built");
     expect(previewCopy.description).not.toContain("Development preview");
-    expect(previewCopy.statusTitle).toBe("This site is being built");
+    expect(previewCopy.statusTitle).toBe("The firm");
     expect(previewCopy.documentationPath).toBe("/development");
-    expect(previewCopy.publishedServicesEmpty).toBe(
-      "No services are approved for publication.",
-    );
+    expect(previewCopy.publishedServicesEmpty).toContain("whether we can help");
   });
 
   it("keeps unconfirmed services out of public copy", () => {

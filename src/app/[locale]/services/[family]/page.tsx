@@ -5,10 +5,7 @@ import { PageHeader } from "@/components/layout/page-header";
 import { MaterialFrame } from "@/components/sections/material-frame";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { QuietEditorialSection } from "@/components/sections/quiet-editorial-section";
-import { Badge } from "@/components/ui/badge";
 import { InlineLink } from "@/components/ui/link";
-import { complianceRecords } from "@/content/compliance/records";
-import { isPaidServiceBookable } from "@/content/compliance/safeguards";
 import {
   getServiceFamily,
   serviceFamilies,
@@ -55,10 +52,6 @@ async function ServiceFamilyContent({
   const match = getServiceFamily(family);
   if (!match) notFound();
 
-  const bookableIds = new Set(
-    complianceRecords.filter((record) => isPaidServiceBookable(record)).map((record) => record.id),
-  );
-
   return (
     <>
       <PageHeader title={match.label} lede={scaffoldCopy.familyMessage} />
@@ -75,18 +68,17 @@ async function ServiceFamilyContent({
           />
         </div>
       </div>
-      <QuietEditorialSection id="family-status" title="Publication status">
+      <QuietEditorialSection id="family-status" title="Before you write">
         <p>{match.restriction}</p>
         <ul className="flex flex-col gap-3 border-t border-line pt-4">
           {servicesInFamily(match.id).map((service) => (
-            <li key={service.id} className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between">
+            <li key={service.id}>
               <InlineLink
                 href={replaceLocaleInPath(service.path, locale)}
                 className="block min-h-11 max-w-full py-2"
               >
                 {service.label}
               </InlineLink>
-              <Badge>{bookableIds.has(service.id) ? "Gate open, no request flow" : "Not approved"}</Badge>
             </li>
           ))}
         </ul>
@@ -94,7 +86,7 @@ async function ServiceFamilyContent({
       <FinalCtaSection
         id="family-next"
         title="How it works"
-        text="The next page explains the steps. It does not open a file."
+        text="The next page explains how a matter proceeds."
         action={{
           href: replaceLocaleInPath(scaffoldCopy.primaryCta.path, locale),
           label: scaffoldCopy.primaryCta.label,

@@ -26,28 +26,28 @@ export const serviceFamilies = [
     label: "Immigration & Citizenship",
     path: "/services/immigration-citizenship",
     restriction:
-      "Paid immigration and citizenship help stays unpublished until authorization is verified. This group is not an offer.",
+      "If your question is about immigration or citizenship, write to us and we will say whether we can help. This website does not file an application, and it is not a government office.",
   },
   {
     id: "government-forms",
     label: "Government & Forms",
     path: "/services/government-forms",
     restriction:
-      "Form help and government-account help stay unpublished. This group is not an official government channel.",
+      "If your question is about a form or a government account, write to us and we will say whether we can help. This firm is not a government office.",
   },
   {
     id: "career-employment",
     label: "Career & Employment",
     path: "/services/career-employment",
     restriction:
-      "Resume and job-application help stay unpublished until the owner approves the scope.",
+      "Résumé and job-application questions are discussed before any writing begins. Send the question first, without attaching a résumé.",
   },
   {
     id: "tax-business-administration",
     label: "Tax & Business Administration",
     path: "/services/tax-business-administration",
     restriction:
-      "Bookkeeping, payroll, and personal tax stay unpublished until the owner approves the scope.",
+      "Questions about records, payroll, and personal tax are discussed before any work begins. This website does not prepare a return.",
   },
 ] as const satisfies readonly {
   id: ServiceCategoryId;
@@ -155,22 +155,20 @@ export const staticPages = [
     id: "about",
     label: "About",
     path: "/about",
-    message:
-      "A founder profile, history, and public biography have not been approved. This page does not add them.",
+    message: "TIBEB Consultancy is a professional-services firm in Canada.",
   },
   {
     id: "resources",
     label: "Resources",
     path: "/resources",
-    message:
-      "Guides stay unpublished until a named reviewer approves them. The questions further down describe this website while it is being built.",
+    message: "Answers to the questions people ask before they write.",
   },
   {
     id: "contact",
     label: "Contact",
     path: "/contact",
     message:
-      "This page has a general inquiry form. It does not publish a business email, phone number, or address, and it does not book a consultation.",
+      "Send a general question. Include a name and a way to reply. This form does not reserve a meeting.",
   },
 ] as const;
 

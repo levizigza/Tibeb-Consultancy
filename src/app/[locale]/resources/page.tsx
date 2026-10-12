@@ -4,11 +4,9 @@ import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/layout/page-header";
 import { GuideIndex } from "@/components/resources/guide-index";
 import { FramedStill } from "@/components/sections/material-frame";
-import { QuietEditorialSection } from "@/components/sections/quiet-editorial-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { guidePresentations } from "@/content/resources/publication";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
-import { TextLink } from "@/components/ui/text-link";
 import { getPublicFaqs } from "@/content/retrieve";
 import { staticPages } from "@/content/site/information-architecture";
 import { previewQuestions } from "@/content/site/preview-questions";
@@ -43,6 +41,7 @@ async function ResourcesContent({
 }) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale) || !page) notFound();
+  const guides = guidePresentations(locale).filter((guide) => guide.published);
   const approved = getPublicFaqs(locale);
   const items =
     approved.length > 0
@@ -61,24 +60,17 @@ async function ResourcesContent({
     <>
       <PageHeader title={page.label} lede={page.message} />
       <FramedStill still={pageStills.reading} />
-      <GuideIndex locale={locale} guides={guidePresentations(locale)} />
+      {guides.length > 0 ? <GuideIndex locale={locale} guides={guides} /> : null}
       <FaqSection
         id="resources-questions"
         title="Questions"
         items={items}
-        empty="Questions, articles, and links stay off this page until they are approved."
+        empty="Questions will be added as they are written."
       />
-      <QuietEditorialSection id="development-notes" title="Notes on this preview">
-        <p>
-          <TextLink href="/development" locale={locale}>
-            Development documentation
-          </TextLink>
-        </p>
-      </QuietEditorialSection>
       <FinalCtaSection
         id="resources-next"
         title="How it works"
-        text="The next page explains the stages. It does not open a file."
+        text="The next page explains how a matter proceeds."
         action={{
           href: replaceLocaleInPath(scaffoldCopy.primaryCta.path, locale),
           label: scaffoldCopy.primaryCta.label,

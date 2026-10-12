@@ -44,7 +44,7 @@ describe("translation catalogs", () => {
     for (const item of primaryNavigation) {
       expect(englishChrome.nav[item.id]).toBe(item.label);
     }
-    expect(englishChrome.languageMenuNote.toLowerCase()).toContain("not a consultation language");
+    expect(englishChrome.languageMenuNote.toLowerCase()).toContain("language of a meeting");
     expect(englishChrome.inquiry.submit.toLowerCase()).not.toContain("book");
   });
 
@@ -102,7 +102,7 @@ describe("translation catalogs", () => {
     expect(markup).toContain('lang="am"');
     expect(markup).toContain("አማርኛ");
     expect(markup).toContain("font-ethiopic");
-    expect(markup).toContain("not a consultation language");
+    expect(markup).toContain("language of a meeting");
     expect(markup).not.toContain('lang="am" class="font-ethiopic">Translation');
   });
 });

@@ -55,8 +55,9 @@ export const pricePresentations: readonly PricePresentation[] = [];
 
 export const pricingPage = {
   title: "Pricing",
-  lede: "No price is approved for publication. This page does not show a fixed price, a starting price, or a quotation.",
-  governmentFee: "A government or third-party fee is not described as included.",
+  lede: "Fees are discussed after we understand the work. This page does not list an amount.",
+  governmentFee:
+    "A charge from a government or another party is separate unless we have agreed that it is included.",
   rows: [
     { id: "fixed", label: "Approved fixed price", status: "Not approved" },
     { id: "starting", label: "Verified starting price", status: "Not approved" },

@@ -12,9 +12,9 @@ describe("homepage copy", () => {
     const page = readFileSync("src/app/[locale]/page.tsx", "utf8");
 
     expect(copy).toContain("Black-owned, Ethiopian-led");
-    expect(copy).toContain("development draft");
-    expect(copy).toContain("No services are approved for publication.");
-    expect(copy).toContain("Not approved");
+    expect(copy).toContain("independent firm");
+    expect(copy).not.toContain("development draft");
+    expect(copy).not.toContain("Not approved");
     expect(copy.toLowerCase()).not.toContain(withheldHeadline.toLowerCase());
     expect(page.toLowerCase()).not.toContain(withheldHeadline.toLowerCase());
     expect(containsProhibitedServiceClaim(copy)).toBe(false);
@@ -32,7 +32,6 @@ describe("homepage copy", () => {
   it("has no approved testimonials or questions to show", () => {
     expect(getPublicTestimonials()).toEqual([]);
     expect(getPublicFaqs("en")).toEqual([]);
-    expect(homePage.evidenceEmpty.length).toBeGreaterThan(0);
     expect(homePage.faqEmpty.length).toBeGreaterThan(0);
   });
 });

@@ -69,9 +69,7 @@ describe("task paths", () => {
     const page = readFileSync("src/app/[locale]/page.tsx", "utf8");
     expect(page).toContain('label: "Resources"');
     expect(homePage.faqEmpty).toContain("Resources page");
-    expect(homePage.governmentValue).toContain("does not present the business as a government channel");
-    expect(homePage.credentialValue).toBe("No credential is approved for publication.");
-    expect(homePage.aboutFounder).toContain("No founder name");
+    expect(homePage.aboutIndependent).toContain("not part of the Canadian government");
     const questions = renderToStaticMarkup(
       createElement(FaqSection, {
         id: "questions",
@@ -83,6 +81,6 @@ describe("task paths", () => {
     );
     expect(questions).toContain('href="/en/resources"');
     expect(readFileSync("src/app/[locale]/how-it-works/page.tsx", "utf8")).toContain('href="/pricing"');
-    expect(readFileSync("src/app/[locale]/about/page.tsx", "utf8")).toContain("Founder profile");
+    expect(readFileSync("src/app/[locale]/about/page.tsx", "utf8")).toContain("independent firm");
   });
 });

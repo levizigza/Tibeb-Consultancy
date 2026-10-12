@@ -24,7 +24,7 @@ describe("inquiry form", () => {
     expect(markup).toContain('name="companyWebsite"');
     expect(markup).toContain('tabindex="-1"');
     expect(markup).toContain('type="submit"');
-    expect(markup).toContain("not a consultation language");
+    expect(markup).toContain("not the language of a meeting");
     expect(markup).not.toContain('type="file"');
     expect(markup).not.toContain("book now");
   });

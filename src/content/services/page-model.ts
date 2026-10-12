@@ -49,7 +49,7 @@ type PublishedServicePage = {
 export type ServicePageModel = ClosedServicePage | PublishedServicePage;
 
 const sourcesIntro =
-  "This page does not explain eligibility, government fees, approval rates, or processing times. These official pages were recorded for the internal review.";
+  "These are official pages for your own reading. This firm is not those offices, and this page does not explain eligibility or processing times.";
 
 function sourceLinks(sourceIds: readonly string[]): SourceLink[] {
   return sourceIds.flatMap((sourceId) => {
@@ -68,7 +68,7 @@ function relatedLinks(page: ServicePage, locale: LocaleCode, approvedOnly: boole
       {
         href: replaceLocaleInPath(item.path, locale),
         title: item.label,
-        status: approved ? "Gate open, no request flow" : "Not approved",
+        status: approved ? "Open to discuss" : "",
       },
     ];
   });
@@ -107,8 +107,8 @@ export function buildServicePageModel(
   return {
     mode: "closed",
     title: page.label,
-    lede: "This name is reserved for a future page. No description, price, or audience has been approved.",
-    metaDescription: `${page.label}. Reserved page. This work is not approved for publication, and this page cannot take a request.`,
+    lede: "Read the boundary below before you write. A message does not start the work.",
+    metaDescription: `${page.label}. TIBEB Consultancy will tell you whether this work can be taken on. A message does not start the work.`,
     statusTitle: scaffoldCopy.closedHeading,
     statusBody: scaffoldCopy.closedBody,
     sourcesIntro,
@@ -118,7 +118,7 @@ export function buildServicePageModel(
     howItWorksHref: replaceLocaleInPath(scaffoldCopy.primaryCta.path, locale),
     howItWorksLabel: scaffoldCopy.primaryCta.label,
     ctaTitle: "Back to this group",
-    ctaText: "This page cannot take a request.",
+    ctaText: "You can also return to the rest of this group.",
     cta: {
       href: replaceLocaleInPath(`/services/${page.familyId}`, locale),
       label: "Back to this group",

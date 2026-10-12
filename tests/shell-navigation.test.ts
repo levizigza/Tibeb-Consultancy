@@ -56,7 +56,7 @@ describe("shell markup", () => {
   it("sends the contact action to the contact page", () => {
     const markup = renderToStaticMarkup(createElement(ContactCta, { locale: "en" }));
     expect(markup).toContain('href="/en/contact"');
-    expect(markup).toContain("not open for client work");
+    expect(markup).toContain("independent firm");
     expect(markup.toLowerCase()).not.toContain("book");
   });
 });

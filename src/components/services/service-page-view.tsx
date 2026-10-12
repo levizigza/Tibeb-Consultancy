@@ -74,7 +74,7 @@ function RelatedList({
             <Link href={item.href} className={linkClassName}>
               {item.title}
             </Link>
-            <Badge>{item.status}</Badge>
+            {item.status ? <Badge>{item.status}</Badge> : null}
           </li>
         ))}
       </ul>

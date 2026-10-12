@@ -5,8 +5,8 @@ export type LocaleCode = (typeof localeCodes)[number];
 export const defaultLocale: LocaleCode = "en";
 
 export const translationStatusLabel = {
-  "development-copy": "Development copy only",
-  "not-started": "Translation not started",
+  "development-copy": "On this site",
+  "not-started": "Translation in preparation",
   approved: "Approved translation",
 } as const;
 

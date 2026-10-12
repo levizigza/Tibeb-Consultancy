@@ -70,7 +70,7 @@ async function PricingContent({ params }: { params: Promise<{ locale: string }> 
       <FinalCtaSection
         id="pricing-contact"
         title="Contact"
-        text="No public email, phone number, or address has been approved. The Contact page has the general inquiry form. This page does not send a message."
+        text="Write from the Contact page. This page does not send a message."
         action={{ href: replaceLocaleInPath("/contact", locale), label: "Contact" }}
       />
     </>

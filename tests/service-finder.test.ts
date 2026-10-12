@@ -103,8 +103,8 @@ describe("service finder interaction", () => {
       }),
     );
 
-    expect(markup).toContain("Not currently offered");
-    expect(markup).toContain("Paid immigration and citizenship help stays unpublished");
+    expect(markup).toContain("Write to us");
+    expect(markup).toContain("If your question is about immigration or citizenship");
     expect(markup).toContain('href="/ti/contact"');
     expect(markup).toContain("Back");
     expect(markup).toContain("Start again");
@@ -123,10 +123,10 @@ describe("service finder interaction", () => {
       }),
     );
 
-    expect(markup).toContain("Published services");
+    expect(markup).toContain("Matching pages");
     expect(markup).toContain('href="/en/services/career-employment/resume-writing"');
     expect(markup).toContain("Approved summary for a published page.");
     expect(markup).toContain('href="/en/contact"');
-    expect(markup).not.toContain("Not currently offered");
+    expect(markup).not.toContain("Write to us");
   });
 });

@@ -32,7 +32,7 @@ export function inquiryEmailText(inquiry: ContactInquiry): string {
     serviceFamilies.find((family) => family.id === inquiry.serviceCategory)?.label ?? "Not sure";
   return [
     "Website inquiry",
-    "This message is not a booking and does not open a consultation.",
+    "This message is a general inquiry.",
     "",
     `Name: ${inquiry.fullName}`,
     `Preferred contact method: ${inquiry.contactMethod}`,

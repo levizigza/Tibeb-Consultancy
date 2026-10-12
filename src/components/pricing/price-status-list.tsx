@@ -1,6 +1,4 @@
-import { Badge } from "@/components/ui/badge";
 import type { PublicPricePresentation } from "@/content/services/price-presentation";
-import { pricingPage } from "@/content/services/price-presentation";
 
 function formatCad(amount: number): string {
   return new Intl.NumberFormat("en-CA", { style: "currency", currency: "CAD" }).format(amount);
@@ -83,20 +81,7 @@ function PriceCard({ item }: { item: PublicPricePresentation }) {
 }
 
 export function PriceStatusList({ items }: { items: readonly PublicPricePresentation[] }) {
-  if (items.length === 0) {
-    return (
-      <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {pricingPage.rows.map((row) => (
-          <div key={row.id} className="border-t border-line pt-3" data-motion="fade">
-            <dt className="text-meta text-muted">{row.label}</dt>
-            <dd className="mt-2">
-              <Badge>{row.status}</Badge>
-            </dd>
-          </div>
-        ))}
-      </dl>
-    );
-  }
+  if (items.length === 0) return null;
 
   return (
     <ul className="grid grid-cols-1 gap-lg lg:grid-cols-2">
