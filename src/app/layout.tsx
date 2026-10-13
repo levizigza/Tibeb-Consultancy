@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { notoSans, notoSansEthiopic } from "@/app/fonts";
+import { PageFrame } from "@/components/brand/page-frame";
 import { SkipLink } from "@/components/layout/skip-link";
 import { previewCopy } from "@/content/translations/preview";
 import { jsonLdScript } from "@/lib/seo/json-ld";
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {organization ? (
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdScript(organization) }} />
         ) : null}
+        <PageFrame />
         <SkipLink />
         {children}
       </body>
