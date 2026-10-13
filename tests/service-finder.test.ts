@@ -104,7 +104,7 @@ describe("service finder interaction", () => {
     );
 
     expect(markup).toContain("Write to us");
-    expect(markup).toContain("If your question is about immigration or citizenship");
+    expect(markup).toContain("We do not choose a program, file an application");
     expect(markup).toContain('href="/ti/contact"');
     expect(markup).toContain("Back");
     expect(markup).toContain("Start again");

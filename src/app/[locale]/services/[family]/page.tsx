@@ -12,6 +12,7 @@ import {
   servicesInFamily,
 } from "@/content/site/information-architecture";
 import { scaffoldCopy } from "@/content/site/scaffold-copy";
+import { serviceWorkFor } from "@/content/site/service-descriptions";
 import { serviceStills } from "@/content/site/work-stills";
 import { replaceLocaleInPath } from "@/i18n/href";
 import { metadataForLocale } from "@/i18n/metadata";
@@ -54,7 +55,7 @@ async function ServiceFamilyContent({
 
   return (
     <>
-      <PageHeader title={match.label} lede={scaffoldCopy.familyMessage} />
+      <PageHeader title={match.label} lede={match.restriction} />
       <div className="mx-auto w-full max-w-page px-gutter pb-xl sm:px-gutter-lg">
         <div className="w-full max-w-content">
           <MaterialFrame
@@ -68,9 +69,8 @@ async function ServiceFamilyContent({
           />
         </div>
       </div>
-      <QuietEditorialSection id="family-status" title="Before you write">
-        <p>{match.restriction}</p>
-        <ul className="flex flex-col gap-3 border-t border-line pt-4">
+      <QuietEditorialSection id="family-status" title="Each service">
+        <ul className="flex flex-col gap-6 border-t border-line pt-4">
           {servicesInFamily(match.id).map((service) => (
             <li key={service.id}>
               <InlineLink
@@ -79,6 +79,7 @@ async function ServiceFamilyContent({
               >
                 {service.label}
               </InlineLink>
+              <p className="text-body text-muted">{serviceWorkFor(service.id).summary}</p>
             </li>
           ))}
         </ul>

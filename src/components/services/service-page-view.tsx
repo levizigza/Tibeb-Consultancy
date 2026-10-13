@@ -87,6 +87,15 @@ export function ServicePageView({ model, locale }: { model: ServicePageModel; lo
     return (
       <>
         <PageHeader title={model.title} lede={model.lede} />
+        <QuietEditorialSection id="service-work" title="What we do">
+          <BulletList items={model.does} />
+        </QuietEditorialSection>
+        <QuietEditorialSection id="service-receives" title="What you receive">
+          <p>{model.receives}</p>
+        </QuietEditorialSection>
+        <QuietEditorialSection id="service-excluded" title="Not included">
+          <BulletList items={model.notIncluded} />
+        </QuietEditorialSection>
         <QuietEditorialSection id="service-status" title={model.statusTitle}>
           <p>{model.statusBody}</p>
           <p>

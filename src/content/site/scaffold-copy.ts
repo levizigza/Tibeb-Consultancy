@@ -1,7 +1,7 @@
 export const scaffoldCopy = {
   servicesTitle: "Services",
   servicesMessage:
-    "Four areas of work. Open the one closest to your question, and read the boundary before you write.",
+    "Four areas of work. Each page says what we prepare, what you receive, and what stays with you.",
   closedHeading: "What a message does",
   closedBody:
     "A message does not retain the firm, file an application, or speak for you to a government agency. We will tell you whether we can help.",

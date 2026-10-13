@@ -3,6 +3,7 @@ import { resourceGuidePaths } from "@/content/resources/guides";
 import { clientProcess } from "@/content/site/client-process";
 import type { ServiceCategoryId } from "@/content/services/categories";
 import { pricingPage } from "@/content/services/price-presentation";
+import { familyWorkSummary } from "@/content/site/service-descriptions";
 
 /**
  * Locale-agnostic paths. `replaceLocaleInPath` adds /en, /am, /ti, or /om.
@@ -25,29 +26,25 @@ export const serviceFamilies = [
     id: "immigration-citizenship",
     label: "Immigration & Citizenship",
     path: "/services/immigration-citizenship",
-    restriction:
-      "If your question is about immigration or citizenship, write to us and we will say whether we can help. This website does not file an application, and it is not a government office.",
+    restriction: familyWorkSummary("immigration-citizenship"),
   },
   {
     id: "government-forms",
     label: "Government & Forms",
     path: "/services/government-forms",
-    restriction:
-      "If your question is about a form or a government account, write to us and we will say whether we can help. This firm is not a government office.",
+    restriction: familyWorkSummary("government-forms"),
   },
   {
     id: "career-employment",
     label: "Career & Employment",
     path: "/services/career-employment",
-    restriction:
-      "Résumé and job-application questions are discussed before any writing begins. Send the question first, without attaching a résumé.",
+    restriction: familyWorkSummary("career-employment"),
   },
   {
     id: "tax-business-administration",
     label: "Tax & Business Administration",
     path: "/services/tax-business-administration",
-    restriction:
-      "Questions about records, payroll, and personal tax are discussed before any work begins. This website does not prepare a return.",
+    restriction: familyWorkSummary("tax-business-administration"),
   },
 ] as const satisfies readonly {
   id: ServiceCategoryId;

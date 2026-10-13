@@ -13,6 +13,7 @@ import {
   servicesInFamily,
 } from "@/content/site/information-architecture";
 import { scaffoldCopy } from "@/content/site/scaffold-copy";
+import { serviceWorkFor } from "@/content/site/service-descriptions";
 import { serviceStills } from "@/content/site/work-stills";
 import { replaceLocaleInPath } from "@/i18n/href";
 import { metadataForLocale } from "@/i18n/metadata";
@@ -55,7 +56,7 @@ async function ServicesContent({
       <ServiceGridSection
         id="service-groups"
         title="Service groups"
-        intro="Open a group to see the names inside it."
+        intro="Open a group, then open a service, to read what the work includes and what it does not."
         items={serviceFamilies.map((family) => ({
           href: replaceLocaleInPath(family.path, locale),
           title: family.label,
@@ -71,6 +72,7 @@ async function ServicesContent({
                   >
                     {service.label}
                   </InlineLink>
+                  <p className="text-body text-muted">{serviceWorkFor(service.id).summary}</p>
                 </li>
               ))}
             </ul>

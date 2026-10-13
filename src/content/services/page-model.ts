@@ -4,6 +4,7 @@ import { isPaidServiceBookable } from "@/content/compliance/safeguards";
 import { servicePageRecords } from "@/content/services/page-records";
 import { selectPublicServicePage, type PublicServicePage } from "@/content/services/page-publication";
 import { scaffoldCopy } from "@/content/site/scaffold-copy";
+import { serviceWorkFor } from "@/content/site/service-descriptions";
 import {
   getServicePage,
   servicesInFamily,
@@ -20,6 +21,9 @@ type ClosedServicePage = {
   title: string;
   lede: string;
   metaDescription: string;
+  does: readonly string[];
+  receives: string;
+  notIncluded: readonly string[];
   statusTitle: string;
   statusBody: string;
   sourcesIntro: string;
@@ -104,11 +108,15 @@ export function buildServicePageModel(
     };
   }
 
+  const work = serviceWorkFor(page.id);
   return {
     mode: "closed",
     title: page.label,
-    lede: "Read the boundary below before you write. A message does not start the work.",
-    metaDescription: `${page.label}. TIBEB Consultancy will tell you whether this work can be taken on. A message does not start the work.`,
+    lede: work.summary,
+    metaDescription: work.summary,
+    does: work.does,
+    receives: work.receives,
+    notIncluded: work.notIncluded,
     statusTitle: scaffoldCopy.closedHeading,
     statusBody: scaffoldCopy.closedBody,
     sourcesIntro,
